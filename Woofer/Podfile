@@ -12,4 +12,5 @@ target 'Woofer' do
   pod 'Firebase/Core'
   pod 'Firebase/InAppMessaging'
   pod 'FirebaseFirestoreSwift'
+  pod 'DLRadioButton', '~> 1.4'
 end
