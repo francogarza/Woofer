@@ -34,7 +34,6 @@ class RegisterStepTwoVC: UIViewController {
         return nil
     }
     
-    
     @IBAction func bt_registerStepTwo(_ sender: Any) {
         let error = validateFields()
         if error != nil {

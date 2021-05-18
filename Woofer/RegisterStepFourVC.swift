@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class RegisterStepFourVC: UIViewController {
 
@@ -28,12 +29,13 @@ class RegisterStepFourVC: UIViewController {
                 // There was an error creating the user
                 self.showError("Invalid email")
             } else{
-                // user was created successfully, now store data
-                db.collection("users").addDocument(data: ["username":newUser.username, "uid": result!.user.uid]) { (error) in
-                    if error != nil {
-                        self.showError("Error saving user data")
+                db.child("users/\(newUser.username)").observeSingleEvent(of: .value, with: {(snapshot) in
+                    if (snapshot.exists()){
+                        print("user name exists")
+                    } else {
+                        db.child("users/\(newUser.username)/name").setValue("\(newUser.firstName)")
                     }
-                }
+                })
             }
         }
     }
