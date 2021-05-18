@@ -6,21 +6,35 @@
 //
 
 import UIKit
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseFirestoreSwift
+import Firebase
+//import FirebaseCore
+//import FirebaseFirestore
+//import FirebaseFirestoreSwift
+//import FirebaseDatabase
+
+
+// STEP #2: CREATE A CONSTANT FOR THE REFERENCE TO THE REALTIME DATABASE
+let db = Firestore.firestore()
+var data = [String:Any]()
 
 class ViewController: UIViewController {
-    var db: Firestore!
+//    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         // Do any additional setup after loading the view.
         // [START setup]
-               let settings = FirestoreSettings()
+//               let settings = FirestoreSettings()
 
-               Firestore.firestore().settings = settings
+//               Firestore.firestore().settings = settings
                // [END setup]
-               db = Firestore.firestore()
+//               db = Firestore.firestore()
+        
+        
+        
     }
 
   
