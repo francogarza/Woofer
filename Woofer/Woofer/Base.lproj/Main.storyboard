@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="869.86607142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Step OneVC-->
         <scene sceneID="Qkh-Lb-HA4">
             <objects>
-                <viewController id="kjF-2c-i6Y" sceneMemberID="viewController">
+                <viewController id="kjF-2c-i6Y" customClass="RegisterStepOneVC" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lk5-yX-8co">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +186,7 @@
                                 <rect key="frame" x="54" y="615" width="306" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0I-3m-j4G">
                                 <rect key="frame" x="54" y="583" width="129" height="24"/>
@@ -202,7 +202,8 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="njf-bu-QgH" kind="presentation" id="Kl1-g0-t7M"/>
+                                    <action selector="bt_register1:" destination="jeL-9E-gL3" eventType="touchUpInside" id="qp3-y2-qaE"/>
+                                    <action selector="bt_registerStepOne:" destination="kjF-2c-i6Y" eventType="touchUpInside" id="9m9-cO-ZiR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About my account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv7-C1-bdb">
@@ -217,17 +218,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qh9-dm-ohM"/>
+                    <connections>
+                        <outlet property="tf_email" destination="75d-pu-vMy" id="wb4-i0-JF8"/>
+                        <outlet property="tf_password" destination="2Xe-Fa-IEy" id="aV8-FY-F5p"/>
+                        <outlet property="tf_username" destination="EUA-E1-oaE" id="YkS-Ce-d6W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRW-8b-HM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jeL-9E-gL3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="766.66666666666674" y="111.83035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Step TwoVC-->
         <scene sceneID="dnp-RJ-hP4">
             <objects>
-                <viewController id="njf-bu-QgH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterStepTwoVC" id="njf-bu-QgH" customClass="RegisterStepTwoVC" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QfD-t2-Fur">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5aK-my-kbZ">
@@ -751,7 +758,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cIN-IR-FjV"/>
+        <segue reference="Vwd-6R-T1o"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>

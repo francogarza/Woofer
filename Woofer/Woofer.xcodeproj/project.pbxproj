@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E6D4DAD26532B69001EA7DE /* RegisterStepOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */; };
+		2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DAE2653303B001EA7DE /* Utilities.swift */; };
+		2E6D4DB126533463001EA7DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DB026533463001EA7DE /* Constants.swift */; };
+		2E6D4DB326533A46001EA7DE /* RegisterStepTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DB226533A46001EA7DE /* RegisterStepTwoVC.swift */; };
 		2EF31DA12640910500C0EDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA02640910500C0EDD7 /* AppDelegate.swift */; };
 		2EF31DA32640910500C0EDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA22640910500C0EDD7 /* SceneDelegate.swift */; };
 		2EF31DA52640910500C0EDD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA42640910500C0EDD7 /* ViewController.swift */; };
@@ -20,6 +24,10 @@
 
 /* Begin PBXFileReference section */
 		253D738A7747F930D5C2094A /* Pods-Woofer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woofer.release.xcconfig"; path = "Target Support Files/Pods-Woofer/Pods-Woofer.release.xcconfig"; sourceTree = "<group>"; };
+		2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepOneVC.swift; sourceTree = "<group>"; };
+		2E6D4DAE2653303B001EA7DE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		2E6D4DB026533463001EA7DE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2E6D4DB226533A46001EA7DE /* RegisterStepTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepTwoVC.swift; sourceTree = "<group>"; };
 		2EF31D9D2640910500C0EDD7 /* Woofer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woofer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF31DA02640910500C0EDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EF31DA22640910500C0EDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,7 @@
 		2EF31D942640910500C0EDD7 = {
 			isa = PBXGroup;
 			children = (
+				2E6D4DB226533A46001EA7DE /* RegisterStepTwoVC.swift */,
 				2EF31D9F2640910500C0EDD7 /* Woofer */,
 				2EF31D9E2640910500C0EDD7 /* Products */,
 				879597E9E80AF7C451DF4088 /* Pods */,
@@ -67,10 +76,13 @@
 		2EF31D9F2640910500C0EDD7 /* Woofer */ = {
 			isa = PBXGroup;
 			children = (
+				2E6D4DAE2653303B001EA7DE /* Utilities.swift */,
 				8B5CAAE62647215900C69DD2 /* GoogleService-Info.plist */,
+				2E6D4DB026533463001EA7DE /* Constants.swift */,
 				2EF31DA02640910500C0EDD7 /* AppDelegate.swift */,
 				2EF31DA22640910500C0EDD7 /* SceneDelegate.swift */,
 				2EF31DA42640910500C0EDD7 /* ViewController.swift */,
+				2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */,
 				2EF31DA62640910500C0EDD7 /* Main.storyboard */,
 				2EF31DAC2640910800C0EDD7 /* Assets.xcassets */,
 				2EF31DAE2640910800C0EDD7 /* LaunchScreen.storyboard */,
@@ -249,9 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */,
 				2EF31DA52640910500C0EDD7 /* ViewController.swift in Sources */,
 				2EF31DAB2640910500C0EDD7 /* Woofer.xcdatamodeld in Sources */,
+				2E6D4DAD26532B69001EA7DE /* RegisterStepOneVC.swift in Sources */,
+				2E6D4DB126533463001EA7DE /* Constants.swift in Sources */,
 				2EF31DA12640910500C0EDD7 /* AppDelegate.swift in Sources */,
+				2E6D4DB326533A46001EA7DE /* RegisterStepTwoVC.swift in Sources */,
 				2EF31DA32640910500C0EDD7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
