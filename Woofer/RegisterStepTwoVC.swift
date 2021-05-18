@@ -9,7 +9,7 @@ import UIKit
 // Radio buttons library
 import DLRadioButton
 
-class RegisterStepTwoVC: UIViewController {
+class RegisterStepTwoVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tf_dogName: UITextField!
     @IBOutlet weak var date_dogBirthdate: UIDatePicker!
@@ -24,6 +24,13 @@ class RegisterStepTwoVC: UIViewController {
             
         dateFormatter.dateFormat = "MMMM d, yyyy"
         
+        tf_dogName.delegate = self
+        tf_dogBreed.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func validateFields() -> String? {

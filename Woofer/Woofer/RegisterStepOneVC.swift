@@ -57,13 +57,6 @@ class RegisterStepOneVC: UIViewController, UITextFieldDelegate {
         if  username == "" || email == "" {
             return "Please fill in all fields"
         }
-        
-        print(userNameExists)
-        if userNameExists == true{
-            print("wtf")
-            return "username exists"
-        }
-        
         // check password validity
         if Utilities.isPasswordValid(cleanedPassword) == false {
             return "Please make sure your password is at least 8 characters, contains a special character and a number"
@@ -89,12 +82,16 @@ class RegisterStepOneVC: UIViewController, UITextFieldDelegate {
                     newUser.email = email
                     newUser.password = password
                     
-                    //check email already exist or not.
-                    Auth.auth().fetchSignInMethods(forEmail: newUser.email) { (providers, error) in
-                        if providers != nil{
-                            self.showError("email already in use")
-                        }else {
-                            self.transitionToNextStep()
+                    Auth.auth().signIn(withEmail: email, password: " ") { (user, error) in
+                        if let errCode = AuthErrorCode(rawValue: error!._code) {
+                            switch errCode {
+                                case .wrongPassword:
+                                    self.showError("email already in use")
+                                case .userNotFound:
+                                    self.transitionToNextStep()
+                                default:
+                                    print("Create User Error: \(error!)")
+                            }
                         }
                     }
                 }
@@ -112,4 +109,5 @@ class RegisterStepOneVC: UIViewController, UITextFieldDelegate {
         let registerStepTwoVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.registerStepTwo))! as RegisterStepTwoVC
         self.present(registerStepTwoVC, animated: true, completion: nil)
     }
+    
 }

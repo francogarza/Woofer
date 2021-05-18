@@ -709,7 +709,6 @@
                                 </state>
                                 <connections>
                                     <action selector="bt_finishRegister:" destination="6YC-rG-gtz" eventType="touchUpInside" id="wUq-Iw-WUY"/>
-                                    <segue destination="yLy-MB-SXd" kind="presentation" id="cIN-IR-FjV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSx-7X-AjP">
@@ -781,9 +780,6 @@
             <point key="canvasLocation" x="3173.913043478261" y="111.83035714285714"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="cIN-IR-FjV"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="header" width="375" height="203"/>
