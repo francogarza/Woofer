@@ -10,34 +10,26 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
+// MARK: - Global structures
+// can be used in all VCs
 struct newUser{
     
-    static var username = String()
-    static var email = String()
-    static var firstName = String()
-    static var lastName = String()
-    static var birthdate = String()
-    static var gender = Bool()
-    static var occupation = String()
-    static var password = String()
-    static var dogName = String()
-    static var dogBirthdate = Date()
-    static var dogBreed = String()
-    static var dogGender = Bool()
-    static var dogExperience = Bool()
-    static var dogAllergies = Bool()
-    static var dogVaccinated = Bool()
-    static var dogPedigree = Bool()
-    static var dogPersonality = Bool()
+    static var username = String(); static var email = String(); static var firstName = String()
+    static var lastName = String(); static var birthdate = String(); static var gender = Bool()
+    static var occupation = String(); static var password = String(); static var dogName = String()
+    static var dogBirthdate = String(); static var dogBreed = String(); static var dogGender = Bool()
+    static var dogExperience = Bool(); static var dogAllergies = Bool(); static var dogVaccinated = Bool()
+    static var dogPedigree = Bool(); static var dogPersonality = Bool()
     
 }
 
-
+// MARK: - ViewController
 class RegisterStepOneVC: UIViewController {
     @IBOutlet weak var tf_username: UITextField!
     @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var tf_password: UITextField!
     
+// MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
     }

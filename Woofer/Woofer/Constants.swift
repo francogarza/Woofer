@@ -14,6 +14,7 @@ struct Constants {
         
         static let registerStepTwo = "RegisterStepTwoVC"
         static let registerStepThree = "RegisterStepThreeVC"
+        static let registerStepFour = "RegisterStepFourVC"
         
     }
     

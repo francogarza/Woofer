@@ -273,7 +273,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="bt_registerStepThree:" destination="njf-bu-QgH" eventType="touchUpInside" id="kcY-hn-S1x"/>
+                                    <action selector="bt_registerStepTwo:" destination="njf-bu-QgH" eventType="touchUpInside" id="yJx-x7-11w"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple header" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-aV-1eU">
@@ -421,7 +421,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6YC-rG-gtz" kind="presentation" id="Rgg-IU-lZt"/>
+                                    <action selector="bt_registerStepThree:" destination="MmH-5E-qnq" eventType="touchUpInside" id="grK-eW-sSp"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple header" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-MH-Uvi">
@@ -464,6 +464,9 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="YuT-tr-LPi" id="nwI-XN-vdu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuT-tr-LPi" customClass="DLRadioButton">
                                 <rect key="frame" x="233" y="532" width="126" height="34"/>
@@ -496,6 +499,9 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="x58-lw-lhK" id="6D6-6u-qqm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x58-lw-lhK" customClass="DLRadioButton">
                                 <rect key="frame" x="233" y="606" width="126" height="34"/>
@@ -542,6 +548,9 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="Uj0-nw-3ic" id="T5C-lb-HkI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj0-nw-3ic" customClass="DLRadioButton">
                                 <rect key="frame" x="234" y="377" width="126" height="34"/>
@@ -574,6 +583,9 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="fa3-4c-wku" id="7e5-Ru-ZqT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-4c-wku" customClass="DLRadioButton">
                                 <rect key="frame" x="234" y="451" width="126" height="34"/>
@@ -591,8 +603,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allegies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipi-gO-yMx">
-                                <rect key="frame" x="54" y="345" width="69" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipi-gO-yMx">
+                                <rect key="frame" x="54" y="345" width="75" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" systemColor="systemPurpleColor"/>
@@ -618,6 +630,12 @@
                         <viewLayoutGuide key="safeArea" id="q03-Gr-dFT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="radBt_Pedigree" destination="EX6-Ok-fPY" id="tTv-nm-A7T"/>
+                        <outlet property="radBt_allergies" destination="Deq-xa-lir" id="wUe-YJ-9m7"/>
+                        <outlet property="radBt_personality" destination="Uo0-JK-Z6Q" id="cL5-Ue-RG5"/>
+                        <outlet property="radBt_vaccinated" destination="5KE-Ft-e2W" id="XYN-en-ICt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5e-oX-yj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -626,9 +644,9 @@
         <!--Register Step FourVC-->
         <scene sceneID="BLN-RH-AaW">
             <objects>
-                <viewController id="6YC-rG-gtz" customClass="RegisterStepFourVC" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterStepFourVC" id="6YC-rG-gtz" customClass="RegisterStepFourVC" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zn2-Sc-bH1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="aj9-r3-r0T">
