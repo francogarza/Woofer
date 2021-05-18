@@ -14,8 +14,8 @@ import Firebase
 
 
 // STEP #2: CREATE A CONSTANT FOR THE REFERENCE TO THE REALTIME DATABASE
-let db = Firestore.firestore()
-var data = [String:Any]()
+//let db = Firestore.firestore()
+//var data = [String:Any]()
 
 class ViewController: UIViewController {
 //    var db: Firestore!

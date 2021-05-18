@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>DATABASE_URL</key>
+	<string>https://woofer-281fc-default-rtdb.firebaseio.com/</string>
 	<key>CLIENT_ID</key>
 	<string>126754122423-8ar3hfcrmne3fo2nok9ku4f151heega8.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>

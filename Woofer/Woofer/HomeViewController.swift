@@ -1,19 +1,16 @@
 //
-//  RegisterStepTwoVC.swift
+//  HomeViewController.swift
 //  Woofer
 //
-//  Created by Franco Garza on 5/17/21.
+//  Created by Franco Garza on 5/18/21.
 //
 
 import UIKit
 
-class RegisterStepTwoVC: UIViewController {
+class HomeViewController: UIViewController {
 
-    var username = String()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(username)
 
         // Do any additional setup after loading the view.
     }

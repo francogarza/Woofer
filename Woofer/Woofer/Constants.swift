@@ -11,8 +11,10 @@ import Foundation
 struct Constants {
     
     struct Storyboard {
-        
+        static let homeVC = "HomeVC"
         static let registerStepTwo = "RegisterStepTwoVC"
+        static let registerStepThree = "RegisterStepThreeVC"
+        static let registerStepFour = "RegisterStepFourVC"
         
     }
     
