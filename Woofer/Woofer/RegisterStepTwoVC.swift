@@ -14,6 +14,9 @@ class RegisterStepTwoVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tf_dogName: UITextField!
     @IBOutlet weak var date_dogBirthdate: UIDatePicker!
     @IBOutlet weak var tf_dogBreed: UITextField!
+    @IBOutlet weak var radbt_gender: DLRadioButton!
+    @IBOutlet weak var radbt_parentExperience: DLRadioButton!
+    
     let dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
@@ -35,7 +38,10 @@ class RegisterStepTwoVC: UIViewController, UITextFieldDelegate {
     
     func validateFields() -> String? {
         // Check that all fields are filled in
-        if  tf_dogName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || tf_dogBreed.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || dateFormatter.string(from: date_dogBirthdate.date) == dateFormatter.string(from: Date()){
+        if  tf_dogName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || tf_dogBreed.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            dateFormatter.string(from: date_dogBirthdate.date) == dateFormatter.string(from: Date()) ||
+            (radbt_gender.isSelected == false && radbt_gender.otherButtons[0].isSelected == false) ||
+            (radbt_parentExperience.isSelected == false && radbt_parentExperience.otherButtons[0].isSelected == false){
             return "Please fill in all fields"
         }
         return nil
@@ -49,9 +55,19 @@ class RegisterStepTwoVC: UIViewController, UITextFieldDelegate {
             // create cleaned versiond of the data
             newUser.dogName = tf_dogName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             newUser.dogBreed = tf_dogBreed.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
             newUser.dogBirthdate = dateFormatter.string(from: date_dogBirthdate.date)
-            print(newUser.dogBirthdate)
+            
+            if radbt_gender.isSelected == true{
+                newUser.dogGender = "male"
+            } else{
+                newUser.dogGender = "female"
+            }
+            
+            if radbt_parentExperience.isSelected == true{
+                newUser.dogExperience = true
+            } else{
+                newUser.dogExperience = false
+            }
             
             let registerStepThreeVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.registerStepThree))! as RegisterStepThreeVC
             self.present(registerStepThreeVC, animated: true, completion: nil)

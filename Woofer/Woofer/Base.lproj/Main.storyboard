@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yLy-MB-SXd" kind="presentation" id="Vwd-6R-T1o"/>
+                                    <action selector="bt_loginTapped:" destination="xvz-0I-oFE" eventType="touchUpInside" id="eoQ-i1-kJi"/>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lkq-jJ-bc0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-Y7-DAs">
@@ -83,17 +84,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tf_email" destination="fYC-aD-rKx" id="bjV-2R-66J"/>
+                        <outlet property="tf_password" destination="e0p-bT-KgP" id="JU8-Ny-xfc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="xvz-0I-oFE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="19" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="gy6-cd-7wf">
             <objects>
-                <viewController id="yLy-MB-SXd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="yLy-MB-SXd" customClass="HomeViewController" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="366-Ly-gfI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-c1-0LY">
@@ -320,6 +326,9 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="KV4-Z4-sgP" id="OFW-LL-TrJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KV4-Z4-sgP" customClass="DLRadioButton">
                                 <rect key="frame" x="234" y="630" width="126" height="34"/>
@@ -352,6 +361,10 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="radbt_parentExperience:" destination="dos-cV-JpB" eventType="touchUpInside" id="kSa-OB-gOh"/>
+                                    <outletCollection property="otherButtons" destination="zMF-Ce-gdM" id="MLh-n4-vMH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMF-Ce-gdM" customClass="DLRadioButton">
                                 <rect key="frame" x="234" y="704" width="126" height="34"/>
@@ -383,11 +396,14 @@
                     <navigationItem key="navigationItem" id="OUg-p0-NMW"/>
                     <connections>
                         <outlet property="date_dogBirthdate" destination="HGw-0P-myg" id="dgL-r7-Mfq"/>
+                        <outlet property="radbt_gender" destination="eOh-NI-era" id="c0x-zg-qUh"/>
+                        <outlet property="radbt_parentExperience" destination="2ai-K6-PtK" id="mEA-uP-3AP"/>
                         <outlet property="tf_dogBreed" destination="J1P-tz-JxA" id="4qb-ap-wyJ"/>
                         <outlet property="tf_dogName" destination="5aK-my-kbZ" id="guI-05-zlY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4D-mI-j6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dos-cV-JpB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1534.7826086956522" y="111.83035714285714"/>
         </scene>
@@ -744,6 +760,9 @@
                                         <color key="value" systemColor="systemPurpleColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="Odc-pk-xKF" id="FGt-Su-qgz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odc-pk-xKF" customClass="DLRadioButton">
                                 <rect key="frame" x="234" y="554" width="126" height="34"/>
@@ -774,6 +793,13 @@
                         <viewLayoutGuide key="safeArea" id="P3t-g2-0AS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="date_birthDate" destination="dv5-cw-tYE" id="h4b-kb-wda"/>
+                        <outlet property="radbt_gender" destination="Bha-kv-1Ni" id="RPC-0h-b3k"/>
+                        <outlet property="tf_firstName" destination="hh2-yx-gpx" id="Vy8-Sq-gVB"/>
+                        <outlet property="tf_lastName" destination="iXz-OT-H4a" id="e3c-Ce-yRJ"/>
+                        <outlet property="tf_occupation" destination="pXZ-eq-3ZV" id="rhP-gb-0aa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCd-n7-xTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

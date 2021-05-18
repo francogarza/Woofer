@@ -17,9 +17,9 @@ import FirebaseDatabase
 // can be used in all VCs
 struct newUser{
     static var username = String(); static var email = String(); static var firstName = String()
-    static var lastName = String(); static var birthdate = String(); static var gender = Bool()
+    static var lastName = String(); static var birthdate = String(); static var gender = String()
     static var occupation = String(); static var password = String(); static var dogName = String()
-    static var dogBirthdate = String(); static var dogBreed = String(); static var dogGender = Bool()
+    static var dogBirthdate = String(); static var dogBreed = String(); static var dogGender = String()
     static var dogExperience = Bool(); static var dogAllergies = Bool(); static var dogVaccinated = Bool()
     static var dogPedigree = Bool(); static var dogPersonality = Bool()
 }
@@ -31,7 +31,6 @@ class RegisterStepOneVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tf_username: UITextField!
     @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var tf_password: UITextField!
-    var userNameExists = false
     
 // MARK: - viewDidLoad()
     override func viewDidLoad() {
