@@ -88,7 +88,11 @@ class RegisterStepOneVC: UIViewController, UITextFieldDelegate {
                                 case .wrongPassword:
                                     self.showError("email already in use")
                                 case .userNotFound:
-                                    self.transitionToNextStep()
+                                    if Utilities.isEmailValid(email){
+                                        self.transitionToNextStep()
+                                    }else{
+                                        self.showError("invalid email")
+                                    }
                                 default:
                                     print("Create User Error: \(error!)")
                             }
