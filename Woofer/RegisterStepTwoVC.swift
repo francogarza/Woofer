@@ -6,27 +6,35 @@
 //
 
 import UIKit
+import DLRadioButton
 
 class RegisterStepTwoVC: UIViewController {
 
     var username = String()
+    var email = String()
+    var password = String()
+    @IBOutlet weak var tf_dogName: UITextField!
+    @IBOutlet weak var date_dogBirthdate: UIDatePicker!
+    @IBOutlet weak var tf_dogBreed: UITextField!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(username)
 
+//        self.isModalInPresentation = true
+        
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func bt_registerStepThree(_ sender: Any) {
+        let registerStepThreeVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.registerStepThree))! as RegisterStepThreeVC
+        registerStepThreeVC.username = username
+        registerStepThreeVC.dogName = tf_dogName.text!
+        self.present(registerStepThreeVC, animated: true, completion: nil)
     }
-    */
+    
 
 }

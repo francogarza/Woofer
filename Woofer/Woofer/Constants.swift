@@ -13,6 +13,7 @@ struct Constants {
     struct Storyboard {
         
         static let registerStepTwo = "RegisterStepTwoVC"
+        static let registerStepThree = "RegisterStepThreeVC"
         
     }
     

@@ -273,7 +273,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MmH-5E-qnq" kind="presentation" id="dmF-QV-19z"/>
+                                    <action selector="bt_registerStepThree:" destination="njf-bu-QgH" eventType="touchUpInside" id="kcY-hn-S1x"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple header" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-aV-1eU">
@@ -381,17 +381,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="OUg-p0-NMW"/>
+                    <connections>
+                        <outlet property="date_dogBirthdate" destination="HGw-0P-myg" id="dgL-r7-Mfq"/>
+                        <outlet property="tf_dogBreed" destination="J1P-tz-JxA" id="4qb-ap-wyJ"/>
+                        <outlet property="tf_dogName" destination="5aK-my-kbZ" id="guI-05-zlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4D-mI-j6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1534.7826086956522" y="111.83035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Step ThreeVC-->
         <scene sceneID="P4D-yh-ouz">
             <objects>
-                <viewController id="MmH-5E-qnq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterStepThreeVC" id="MmH-5E-qnq" customClass="RegisterStepThreeVC" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AZs-XR-a8e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3Z-1T-UhJ">
@@ -618,10 +623,10 @@
             </objects>
             <point key="canvasLocation" x="2332" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Step FourVC-->
         <scene sceneID="BLN-RH-AaW">
             <objects>
-                <viewController id="6YC-rG-gtz" sceneMemberID="viewController">
+                <viewController id="6YC-rG-gtz" customClass="RegisterStepFourVC" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zn2-Sc-bH1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,6 +690,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="bt_finishRegister:" destination="6YC-rG-gtz" eventType="touchUpInside" id="wUq-Iw-WUY"/>
                                     <segue destination="yLy-MB-SXd" kind="presentation" id="cIN-IR-FjV"/>
                                 </connections>
                             </button>
@@ -758,7 +764,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vwd-6R-T1o"/>
+        <segue reference="cIN-IR-FjV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>

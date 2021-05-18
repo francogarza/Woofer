@@ -10,6 +10,29 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
+struct newUser{
+    
+    static var username = String()
+    static var email = String()
+    static var firstName = String()
+    static var lastName = String()
+    static var birthdate = String()
+    static var gender = Bool()
+    static var occupation = String()
+    static var password = String()
+    static var dogName = String()
+    static var dogBirthdate = Date()
+    static var dogBreed = String()
+    static var dogGender = Bool()
+    static var dogExperience = Bool()
+    static var dogAllergies = Bool()
+    static var dogVaccinated = Bool()
+    static var dogPedigree = Bool()
+    static var dogPersonality = Bool()
+    
+}
+
+
 class RegisterStepOneVC: UIViewController {
     @IBOutlet weak var tf_username: UITextField!
     @IBOutlet weak var tf_email: UITextField!
@@ -39,26 +62,20 @@ class RegisterStepOneVC: UIViewController {
             showError(error!)
         } else{
             // create cleaned versiond of the data
-            let username = tf_username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = tf_email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = tf_password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            newUser.username = tf_username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            newUser.email = tf_email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            newUser.password = tf_password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            // create user
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                // Check for errors
-                if err != nil{
-                    // There was an error creating the user
-                    self.showError("Invalid email")
-                } else{
-                    // user was created successfully, now store data
-                    db.collection("users").addDocument(data: ["username":username, "uid": result!.user.uid]) { (error) in
-                        if error != nil {
-                            self.showError("Error saving user data")
-                        }
-                    }
+            //check email already exist or not.
+            Auth.auth().fetchSignInMethods(forEmail: newUser.email) { (providers, error) in
+                if providers != nil{
+                    self.showError("email already in use")
+                }else {
                     self.transitionToNextStep()
                 }
             }
+            
+            
         }
     }
     
@@ -70,7 +87,6 @@ class RegisterStepOneVC: UIViewController {
     
     func transitionToNextStep(){
         let registerStepTwoVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.registerStepTwo))! as RegisterStepTwoVC
-        registerStepTwoVC.username = tf_username.text!
         self.present(registerStepTwoVC, animated: true, completion: nil)
     }
 }
