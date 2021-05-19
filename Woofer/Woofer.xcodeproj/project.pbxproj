@@ -24,7 +24,8 @@
 		2EF31DB02640910800C0EDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF31DAE2640910800C0EDD7 /* LaunchScreen.storyboard */; };
 		8B5CAAE72647215900C69DD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B5CAAE62647215900C69DD2 /* GoogleService-Info.plist */; };
 		A3FC040E49E4F6FB833B2620 /* Pods_Woofer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B108FF975744CDBD9C5C1F /* Pods_Woofer.framework */; };
-		C4F49E812654B97E00816A67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F49E802654B97E00816A67 /* ProfileViewController.swift */; };
+		C4F49E8526559C4800816A67 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F49E8426559C4800816A67 /* TableViewController.swift */; };
+		C4F49E8826559E2900816A67 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F49E8726559E2900816A67 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,8 @@
 		2EF31DB12640910800C0EDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75B108FF975744CDBD9C5C1F /* Pods_Woofer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Woofer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5CAAE62647215900C69DD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C4F49E802654B97E00816A67 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C4F49E8426559C4800816A67 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C4F49E8726559E2900816A67 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F04AA56ACA5128520C139C40 /* Pods-Woofer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woofer.debug.xcconfig"; path = "Target Support Files/Pods-Woofer/Pods-Woofer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +99,8 @@
 				2EF31DA02640910500C0EDD7 /* AppDelegate.swift */,
 				2EF31DA22640910500C0EDD7 /* SceneDelegate.swift */,
 				2EF31DA62640910500C0EDD7 /* Main.storyboard */,
-				C4F49E802654B97E00816A67 /* ProfileViewController.swift */,
+				C4F49E8426559C4800816A67 /* TableViewController.swift */,
+				C4F49E8726559E2900816A67 /* CustomCell.swift */,
 				2E89E01B26544EE500975CA8 /* HomeViewController.swift */,
 				2EF31DAC2640910800C0EDD7 /* Assets.xcassets */,
 				2EF31DAE2640910800C0EDD7 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			files = (
 				2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */,
 				2E6D4DB726534644001EA7DE /* RegisterStepFourVC.swift in Sources */,
+				C4F49E8526559C4800816A67 /* TableViewController.swift in Sources */,
 				2EF31DA52640910500C0EDD7 /* ViewController.swift in Sources */,
 				2EF31DAB2640910500C0EDD7 /* Woofer.xcdatamodeld in Sources */,
 				2E6D4DAD26532B69001EA7DE /* RegisterStepOneVC.swift in Sources */,
@@ -286,8 +290,8 @@
 				2E6D4DB526534443001EA7DE /* RegisterStepThreeVC.swift in Sources */,
 				2E6D4DB326533A46001EA7DE /* RegisterStepTwoVC.swift in Sources */,
 				2EF31DA32640910500C0EDD7 /* SceneDelegate.swift in Sources */,
-				C4F49E812654B97E00816A67 /* ProfileViewController.swift in Sources */,
 				2E89E01A265446F200975CA8 /* LoginViewController.swift in Sources */,
+				C4F49E8826559E2900816A67 /* CustomCell.swift in Sources */,
 				2E89E01C26544EE500975CA8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
