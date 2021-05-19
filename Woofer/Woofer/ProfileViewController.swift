@@ -1,8 +1,8 @@
 //
-//  HomeViewController.swift
+//  ProfileViewController.swift
 //  Woofer
 //
-//  Created by Franco Garza on 5/18/21.
+//  Created by Diego Villarreal on 18/05/21.
 //
 
 import UIKit
@@ -16,8 +16,7 @@ class HomeViewController: UIViewController {
     }
     
 
-    @IBAction func unwind( _ seg: UIStoryboardSegue) {
-    }
+    
     /*
     // MARK: - Navigation
 
