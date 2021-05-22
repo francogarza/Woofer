@@ -18,21 +18,10 @@ import Firebase
 //var data = [String:Any]()
 
 class ViewController: UIViewController {
-//    var db: Firestore!
+//    var db: Firestore! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        // Do any additional setup after loading the view.
-        // [START setup]
-//               let settings = FirestoreSettings()
-
-//               Firestore.firestore().settings = settings
-               // [END setup]
-//               db = Firestore.firestore()
-        
         
         
     }

@@ -61,9 +61,9 @@ class RegisterStepFourVC: UIViewController, UITextFieldDelegate {
             newUser.birthdate = dateFormatter.string(from: date_birthDate.date)
  
             if radbt_gender.isSelected == true{
-                newUser.dogGender = "male"
+                newUser.gender = "male"
             } else{
-                newUser.dogGender = "female"
+                newUser.gender = "female"
             }
         
             // create user
