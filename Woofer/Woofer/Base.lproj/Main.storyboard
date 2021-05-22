@@ -102,48 +102,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-c1-0LY">
-                                <rect key="frame" x="142" y="34" width="131" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ScV-G6-5ua">
-                                <rect key="frame" x="54" y="110" width="307" height="339"/>
+                                <rect key="frame" x="29" y="110" width="356" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTL-3i-pvw">
-                                <rect key="frame" x="49" y="34" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTL-3i-pvw">
+                                <rect key="frame" x="42" y="44" width="45" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
+                                <state key="normal" image="WhatsApp Image 2021-05-21 at 11.03.24 PM (1)"/>
                                 <connections>
                                     <segue destination="SP3-cl-D3s" kind="presentation" id="Bzo-m7-7XL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgS-iP-IeK">
-                                <rect key="frame" x="334" y="33" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profile"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpx-nM-zZt">
-                                <rect key="frame" x="168" y="479" width="79" height="30"/>
+                                <rect key="frame" x="125" y="723" width="165" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="view profile"/>
+                                <state key="normal" title="view profile" backgroundImage="Screen Shot 2021-05-22 at 15.08.24"/>
                                 <connections>
                                     <segue destination="905-wC-HwH" kind="presentation" id="wIA-Fc-QqB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6L-dC-69P">
-                                <rect key="frame" x="60" y="556" width="67" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-vf-B20">
+                                <rect key="frame" x="307" y="763" width="66" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="No match"/>
+                                <state key="normal" image="WhatsApp Image 2021-05-21 at 11.03.24 PM"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-vf-B20">
-                                <rect key="frame" x="306" y="556" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgS-iP-IeK">
+                                <rect key="frame" x="338" y="40" width="47" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Match"/>
+                                <state key="normal" image="WhatsApp Image 2021-05-21 at 11.03.23 PM"/>
+                                <connections>
+                                    <segue destination="hjH-Kg-s51" kind="presentation" id="AA5-Y8-1SZ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CcG-Dv-lDa">
+                                <rect key="frame" x="29" y="638" width="356" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vio-TL-HZu">
+                                        <rect key="frame" x="8" y="17" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kho-wf-gxi">
+                                        <rect key="frame" x="101" y="17" width="30" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.71417660179999998" green="0.56959521390000001" blue="0.67997905319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6L-dC-69P">
+                                <rect key="frame" x="42" y="763" width="66" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="WhatsApp Image 2021-05-21 at 11.03.23 PM (1)"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0qS-DM-sP0"/>
@@ -339,7 +355,7 @@
             <objects>
                 <tableViewController id="hjH-Kg-s51" customClass="TableViewController" customModule="Woofer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tAt-ZZ-hoR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1402,6 +1418,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Screen Shot 2021-05-22 at 15.08.24" width="578" height="102"/>
+        <image name="WhatsApp Image 2021-05-21 at 11.03.23 PM" width="60" height="64"/>
+        <image name="WhatsApp Image 2021-05-21 at 11.03.23 PM (1)" width="66" height="61"/>
+        <image name="WhatsApp Image 2021-05-21 at 11.03.24 PM" width="66" height="61"/>
+        <image name="WhatsApp Image 2021-05-21 at 11.03.24 PM (1)" width="60" height="60"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="header" width="375" height="203"/>
         <image name="purple header" width="375" height="205"/>
