@@ -15,11 +15,11 @@ class CustomCell: UITableViewCell{
     var age : Int!
     var owner : String!
     
-    var messageView : UITextView = {
-        var textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }
+//    var messageView : UITextView = { () -> <#Result#> in
+//        var textView = UITextView()
+//        textView.translatesAutoresizingMaskIntoConstraints = false
+//        return textView
+//    }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -27,6 +27,6 @@ class CustomCell: UITableViewCell{
     }
     
     required init?(coder: NSCoder) {
-        <#code#>
+        fatalError("init(coder:) has not been implemented")
     }
 }
