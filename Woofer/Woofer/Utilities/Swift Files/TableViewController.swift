@@ -11,7 +11,7 @@ import UIKit
 
 struct CellData{
     let image: UIImage!
-    let name: Sting!
+    let name: String!
     let age: Int!
     let owner: String!
 }

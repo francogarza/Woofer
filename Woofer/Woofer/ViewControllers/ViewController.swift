@@ -37,8 +37,6 @@ class ViewController: UIViewController {
         vProfile3.layer.cornerRadius = 10.0
         vProfile4.layer.cornerRadius = 10.0
         
-<<<<<<< HEAD
-=======
         vMatch1.layer.cornerRadius = 10.0
         vMatch2.layer.cornerRadius = 10.0
         vMatch3.layer.cornerRadius = 10.0
@@ -52,8 +50,6 @@ class ViewController: UIViewController {
                // [END setup]
 //               db = Firestore.firestore()
         
-        
->>>>>>> 2168fb96b6fde41d9c8ad94caf09ccc72ed84295
         
     }
 
