@@ -18,7 +18,7 @@ import Firebase
 //var data = [String:Any]()
 
 class ViewController: UIViewController {
-//    var db: Firestore!
+//    var db: Firestore! 
     
     @IBOutlet weak var vProfile1: UIView!
     @IBOutlet weak var vProfile2: UIView!
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
 //               Firestore.firestore().settings = settings
                // [END setup]
 //               db = Firestore.firestore()
-        
         
         
     }
