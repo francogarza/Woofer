@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bt_dislike: UIButton!
     @IBOutlet weak var bt_like: UIButton!
     @IBOutlet weak var bt_viewProfile: UIButton!
+    @IBOutlet weak var lb_age: UILabel!
     var petsData: [[String:Any]] = [[:]]
     var i = 0
     
@@ -51,16 +52,12 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func bt_dislike(_ sender: Any) {
-        
-        
+            
         db.child("users/\(username.text!)/pets/\(dogId.text!)/status/\(Auth.auth().currentUser!.uid)").setValue("dislike")
-        
+
         disableButtons()
         loadPet()
-        
     }
-    
-    
     
     func loadPet(){
         name.text = "name"
@@ -92,9 +89,14 @@ class HomeViewController: UIViewController {
                         
                         if petDic["ownerUID"] as? String != Auth.auth().currentUser?.uid{
                             self.name.text = petDic["name"] as? String
-                            self.username.text = petDic["ownerUID"] as? String
+                            self.username.text = petDic["owner"] as? String
                             self.dogId.text = snapPets.key
                             self.enableButtons()
+                            
+                            let age = petDic["birthdate"] as? String
+                            self.lb_age.text = age
+                            
+                            
                             return
                         }
                         

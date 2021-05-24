@@ -139,14 +139,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vio-TL-HZu">
-                                        <rect key="frame" x="8" y="17" width="45" height="21"/>
+                                        <rect key="frame" x="8" y="17" width="85" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kho-wf-gxi">
-                                        <rect key="frame" x="101" y="17" width="30" height="21"/>
+                                        <rect key="frame" x="101" y="17" width="189" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -198,6 +198,7 @@
                         <outlet property="bt_viewProfile" destination="jpx-nM-zZt" id="gFJ-BK-jMX"/>
                         <outlet property="currentUsername" destination="ucD-H8-Oog" id="vcK-6l-7Zf"/>
                         <outlet property="dogId" destination="e7m-nx-vhn" id="XTk-W0-tY6"/>
+                        <outlet property="lb_age" destination="kho-wf-gxi" id="uKY-fg-aCS"/>
                         <outlet property="name" destination="vio-TL-HZu" id="6kE-Qg-a1S"/>
                         <outlet property="username" destination="Xpu-rc-phn" id="T32-UH-I35"/>
                     </connections>
@@ -1219,6 +1220,9 @@
                                 <state key="normal" title="Upload picture">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="bt_uploadImage:" destination="MmH-5E-qnq" eventType="touchUpInside" id="Kkk-sH-Fhd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About my dog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBs-BB-yF7">
                                 <rect key="frame" x="97" y="296" width="221" height="41"/>
