@@ -84,16 +84,25 @@ class RegisterStepFourVC: UIViewController, UITextFieldDelegate {
                             db.child("users/\(newUser.username)/birthdate").setValue("\(newUser.birthdate)")
                             db.child("users/\(newUser.username)/gender").setValue("\(newUser.gender)")
                             db.child("users/\(newUser.username)/occupation").setValue("\(newUser.occupation)")
-                            db.child("users/\(newUser.username)/pets").setValue("\(newUser.dogName)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/birthdate").setValue("\(newUser.dogBirthdate)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/breed").setValue("\(newUser.dogBreed)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/gender").setValue("\(newUser.dogGender)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/experience").setValue("\(newUser.dogExperience)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/allergies").setValue("\(newUser.dogAllergies)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/vaccinated").setValue("\(newUser.dogVaccinated)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/pedigree").setValue("\(newUser.dogPedigree)")
-                            db.child("users/\(newUser.username)/pets/\(newUser.dogName)/personality").setValue("\(newUser.dogPersonality)")
+                            
+                            let newPetRef = db.child("users/\(newUser.username)/pets").childByAutoId()
+                            let newPetId = newPetRef.key!
+                            
+//                            db.child("users/\(newUser.username)/pets").setValue("\(newUser.dogName)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/name").setValue("\(newUser.dogName)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/birthdate").setValue("\(newUser.dogBirthdate)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/breed").setValue("\(newUser.dogBreed)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/gender").setValue("\(newUser.dogGender)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/experience").setValue("\(newUser.dogExperience)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/allergies").setValue("\(newUser.dogAllergies)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/vaccinated").setValue("\(newUser.dogVaccinated)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/pedigree").setValue("\(newUser.dogPedigree)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/personality").setValue("\(newUser.dogPersonality)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/owner").setValue("\(newUser.username)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/ownerUID").setValue("\(result!.user.uid)")
+                            db.child("users/\(newUser.username)/pets/\(newPetId)/status/test").setValue("like")
                             db.child("users/\(newUser.username)/uid").setValue("\(result!.user.uid)")
+                            
                         }
                     })
                     currentUser.uid = result!.user.uid
