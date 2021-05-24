@@ -198,6 +198,7 @@
                         <outlet property="bt_viewProfile" destination="jpx-nM-zZt" id="gFJ-BK-jMX"/>
                         <outlet property="currentUsername" destination="ucD-H8-Oog" id="vcK-6l-7Zf"/>
                         <outlet property="dogId" destination="e7m-nx-vhn" id="XTk-W0-tY6"/>
+                        <outlet property="img_dogImage" destination="ScV-G6-5ua" id="YOJ-G3-NIf"/>
                         <outlet property="lb_age" destination="kho-wf-gxi" id="uKY-fg-aCS"/>
                         <outlet property="name" destination="vio-TL-HZu" id="6kE-Qg-a1S"/>
                         <outlet property="username" destination="Xpu-rc-phn" id="T32-UH-I35"/>

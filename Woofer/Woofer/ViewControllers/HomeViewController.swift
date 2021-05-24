@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class HomeViewController: UIViewController {
     
@@ -17,15 +18,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bt_like: UIButton!
     @IBOutlet weak var bt_viewProfile: UIButton!
     @IBOutlet weak var lb_age: UILabel!
+    @IBOutlet weak var img_dogImage: UIImageView!
     var petsData: [[String:Any]] = [[:]]
     var i = 0
     
     @IBOutlet weak var currentUsername: UILabel!
+    private let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPet()
         
+        UserDefaults.standard.set("", forKey: "url")
+        loadPet()
         
         let ref = Database.database().reference(withPath: "users")
         ref.queryOrdered(byChild: "uid").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: {snapshot in
@@ -63,6 +67,7 @@ class HomeViewController: UIViewController {
         name.text = "name"
         username.text = "username"
         dogId.text = "dogId"
+        img_dogImage.image = nil
         
         // get the reference for the users
         let ref = Database.database().reference(withPath: "users")
@@ -96,6 +101,24 @@ class HomeViewController: UIViewController {
                             let age = petDic["birthdate"] as? String
                             self.lb_age.text = age
                             
+                            // load image
+                            let userDic = snapUsers.value as! [String:Any]
+                            let email = userDic["email"] as! String
+                            
+                            self.storage.child("images/\(email).png").downloadURL(completion: {url, error in
+                                
+                                guard let url = url, error == nil else{
+                                    UserDefaults.standard.set("urlString", forKey: "url")
+                                    return
+                                }
+                                
+                                let urlString = url.absoluteString
+                                print("downaload url: \(urlString)")
+                                UserDefaults.standard.set(urlString, forKey: "url")
+                                
+                                self.loadImage()
+                                
+                            })
                             
                             return
                         }
@@ -105,6 +128,30 @@ class HomeViewController: UIViewController {
                 }
             }
         })
+        
+        
+    }
+    
+    func loadImage(){
+        
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+              let url = URL(string: urlString) else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            DispatchQueue.main.sync {
+                
+                let image = UIImage(data: data)
+                self.img_dogImage.image = image
+            }
+            
+        })
+        
+        task.resume()
     }
     
     func disableButtons(){
