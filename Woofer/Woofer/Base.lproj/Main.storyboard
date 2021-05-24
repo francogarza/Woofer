@@ -159,20 +159,30 @@
                                 <rect key="frame" x="42" y="763" width="66" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="WhatsApp Image 2021-05-21 at 11.03.23 PM (1)"/>
+                                <connections>
+                                    <action selector="bt_dislike:" destination="yLy-MB-SXd" eventType="touchUpInside" id="4fQ-bI-x2l"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ScV-G6-5ua">
                                 <rect key="frame" x="29" y="96" width="356" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpu-rc-phn">
-                                <rect key="frame" x="186" y="803" width="76" height="21"/>
+                                <rect key="frame" x="125" y="803" width="165" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dogid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7m-nx-vhn">
-                                <rect key="frame" x="203" y="832" width="44" height="21"/>
+                                <rect key="frame" x="125" y="832" width="165" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucD-H8-Oog">
+                                <rect key="frame" x="125" y="774" width="165" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -183,6 +193,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="bt_dislike" destination="Z6L-dC-69P" id="mAz-rO-fXi"/>
+                        <outlet property="bt_like" destination="wNm-vf-B20" id="RB1-nz-f4C"/>
+                        <outlet property="bt_viewProfile" destination="jpx-nM-zZt" id="gFJ-BK-jMX"/>
+                        <outlet property="currentUsername" destination="ucD-H8-Oog" id="vcK-6l-7Zf"/>
                         <outlet property="dogId" destination="e7m-nx-vhn" id="XTk-W0-tY6"/>
                         <outlet property="name" destination="vio-TL-HZu" id="6kE-Qg-a1S"/>
                         <outlet property="username" destination="Xpu-rc-phn" id="T32-UH-I35"/>
