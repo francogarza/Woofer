@@ -11,7 +11,7 @@ import UIKit
 
 struct CellData{
     let image: UIImage!
-    let name: Sting!
+    let name: String!
     let age: Int!
     let owner: String!
 }
@@ -26,10 +26,10 @@ class TableViewController: UITableViewController{
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        1
     }
 }
