@@ -10,8 +10,11 @@
 #endif
 #endif
 
+#import "FirebaseInAppMessaging 2.h"
 #import "FirebaseInAppMessaging.h"
+#import "FIRInAppMessaging 2.h"
 #import "FIRInAppMessaging.h"
+#import "FIRInAppMessagingRendering 2.h"
 #import "FIRInAppMessagingRendering.h"
 
 FOUNDATION_EXPORT double FirebaseInAppMessagingVersionNumber;
