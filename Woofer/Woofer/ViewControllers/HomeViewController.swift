@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.set("", forKey: "url")
+        UserDefaults.standard.set("", forKey: "urlDogImage")
         loadPet()
         
         let ref = Database.database().reference(withPath: "users")
@@ -105,36 +105,32 @@ class HomeViewController: UIViewController {
                             let userDic = snapUsers.value as! [String:Any]
                             let email = userDic["email"] as! String
                             
-                            self.storage.child("images/\(email).png").downloadURL(completion: {url, error in
+                            self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
                                 
                                 guard let url = url, error == nil else{
-                                    UserDefaults.standard.set("urlString", forKey: "url")
+                                    UserDefaults.standard.set("urlString", forKey: "urlDogImage")
                                     return
                                 }
                                 
                                 let urlString = url.absoluteString
-                                print("downaload url: \(urlString)")
-                                UserDefaults.standard.set(urlString, forKey: "url")
+                                
+                                // set it as user default so load image can use this value
+                                UserDefaults.standard.set(urlString, forKey: "urlDogImage")
                                 
                                 self.loadImage()
                                 
                             })
-                            
                             return
                         }
-                        
                     }
-                    
                 }
             }
         })
-        
-        
     }
     
     func loadImage(){
         
-        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+        guard let urlString = UserDefaults.standard.value(forKey: "urlDogImage") as? String,
               let url = URL(string: urlString) else{
             return
         }

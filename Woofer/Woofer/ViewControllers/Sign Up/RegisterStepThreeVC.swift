@@ -56,7 +56,7 @@ class RegisterStepThreeVC: UIViewController, UIImagePickerControllerDelegate, UI
         }
         
         
-        storage.child("images/\(newUser.email).png").putData(imageData, metadata: nil, completion: { _, error in
+        storage.child("images/\(newUser.email)dog.png").putData(imageData, metadata: nil, completion: { _, error in
             guard error == nil else{
                 print("failse to upload")
                 return
