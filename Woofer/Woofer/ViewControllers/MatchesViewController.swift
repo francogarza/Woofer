@@ -102,11 +102,12 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             for key in currentUserLikesDictionary.keys{
                 print(key)
                 // dictionary for the like's info
-                let likeDictionary = usersDictionary["\(key)"] as! [String:Any]
-                let likeLikesDictionary = likeDictionary["likes"] as! [String:Any]
+                if let likeDictionary = usersDictionary["\(key)"] as? [String:Any]{
+                    let likeLikesDictionary = likeDictionary["likes"] as! [String:Any]
 
-                if likeLikesDictionary["\(self.currentUsernameString)"] != nil{
-                    self.loadDogInfo(userDictionary: likeDictionary)
+                    if likeLikesDictionary["\(self.currentUsernameString)"] != nil{
+                        self.loadDogInfo(userDictionary: likeDictionary)
+                    }
                 }
                 
                 self.tableView.reloadData()
