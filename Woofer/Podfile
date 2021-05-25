@@ -8,11 +8,8 @@ target 'Woofer' do
   # Pods for Woofer# add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
-  pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'Firebase/InAppMessaging'
-  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Core'
   pod 'DLRadioButton', '~> 1.4'
 end

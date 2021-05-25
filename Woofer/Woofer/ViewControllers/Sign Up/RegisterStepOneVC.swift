@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import FirebaseFirestoreSwift
 // AUTH
 import FirebaseAuth
 // REALTIME DATABASE

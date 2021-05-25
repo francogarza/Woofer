@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.set("", forKey: "urlDogImage")
+        UserDefaults.standard.set("", forKey: "urlDogImageBrowse")
         loadPet()
         
         let ref = Database.database().reference(withPath: "users")
@@ -118,14 +118,14 @@ class HomeViewController: UIViewController {
                             self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
                                 
                                 guard let url = url, error == nil else{
-                                    UserDefaults.standard.set("urlString", forKey: "urlDogImage")
+                                    UserDefaults.standard.set("urlString", forKey: "urlDogImageBrowse")
                                     return
                                 }
                                 
                                 let urlString = url.absoluteString
                                 
                                 // set it as user default so load image can use this value
-                                UserDefaults.standard.set(urlString, forKey: "urlDogImage")
+                                UserDefaults.standard.set(urlString, forKey: "urlDogImageBrowse")
                                 
                                 self.loadImage()
                                 
@@ -155,7 +155,7 @@ class HomeViewController: UIViewController {
     
     func loadImage(){
         
-        guard let urlString = UserDefaults.standard.value(forKey: "urlDogImage") as? String,
+        guard let urlString = UserDefaults.standard.value(forKey: "urlDogImageBrowse") as? String,
               let url = URL(string: urlString) else{
             return
         }

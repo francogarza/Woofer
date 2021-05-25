@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E491107265C544900008F68 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E491106265C544900008F68 /* MatchesViewController.swift */; };
+		2E4DC07D265D91A400F08280 /* MatchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */; };
 		2E6D4DAD26532B69001EA7DE /* RegisterStepOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */; };
 		2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DAE2653303B001EA7DE /* Utilities.swift */; };
 		2E6D4DB126533463001EA7DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DB026533463001EA7DE /* Constants.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		253D738A7747F930D5C2094A /* Pods-Woofer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woofer.release.xcconfig"; path = "Target Support Files/Pods-Woofer/Pods-Woofer.release.xcconfig"; sourceTree = "<group>"; };
 		2E491106265C544900008F68 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchProfileViewController.swift; sourceTree = "<group>"; };
 		2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepOneVC.swift; sourceTree = "<group>"; };
 		2E6D4DAE2653303B001EA7DE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2E6D4DB026533463001EA7DE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -113,7 +115,7 @@
 				2E89E01B26544EE500975CA8 /* HomeViewController.swift */,
 				2E491106265C544900008F68 /* MatchesViewController.swift */,
 				2EF31DA42640910500C0EDD7 /* ViewController.swift */,
-				C4545230265D8C8C0077656F /* SettingsViewController.swift */,
+				2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,7 +187,6 @@
 				2EF31D9A2640910500C0EDD7 /* Frameworks */,
 				2EF31D9B2640910500C0EDD7 /* Resources */,
 				3DB064C8CB75AFC16F4EFCE0 /* [CP] Embed Pods Frameworks */,
-				E623D96A7057073F816AC1FC /* [CP] Copy Pods Resources */,
 				8B5CAAE82647235B00C69DD2 /* Run Script */,
 			);
 			buildRules = (
@@ -301,23 +302,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_STG=${PROJECT_DIR}/${TARGET_NAME}/Other/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Other/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_STG}\"\nif [ ! -f $GOOGLESERVICE_INFO_STG ]\nthen\n    echo \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\n    echo \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Production\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_STG}\"\n    cp \"${GOOGLESERVICE_INFO_STG}\" \"${PLIST_DESTINATION}\"\nfi\n";
 		};
-		E623D96A7057073F816AC1FC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Woofer/Pods-Woofer-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Woofer/Pods-Woofer-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Woofer/Pods-Woofer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -325,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4DC07D265D91A400F08280 /* MatchProfileViewController.swift in Sources */,
 				2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */,
 				2E6D4DB726534644001EA7DE /* RegisterStepFourVC.swift in Sources */,
 				C4F49E8526559C4800816A67 /* TableViewController.swift in Sources */,
