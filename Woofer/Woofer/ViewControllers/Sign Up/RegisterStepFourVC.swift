@@ -84,6 +84,7 @@ class RegisterStepFourVC: UIViewController, UITextFieldDelegate {
                             db.child("users/\(newUser.username)/birthdate").setValue("\(newUser.birthdate)")
                             db.child("users/\(newUser.username)/gender").setValue("\(newUser.gender)")
                             db.child("users/\(newUser.username)/occupation").setValue("\(newUser.occupation)")
+                            db.child("users/\(newUser.username)/likes/test").setValue("like")
                             
                             let newPetRef = db.child("users/\(newUser.username)/pets").childByAutoId()
                             let newPetId = newPetRef.key!
@@ -105,7 +106,6 @@ class RegisterStepFourVC: UIViewController, UITextFieldDelegate {
                             
                         }
                     })
-                    currentUser.uid = result!.user.uid
                     self.transitionToHome()
                 }
             }

@@ -7,31 +7,75 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var dogId: UILabel!
+    @IBOutlet weak var bt_dislike: UIButton!
+    @IBOutlet weak var bt_like: UIButton!
+    @IBOutlet weak var bt_viewProfile: UIButton!
+    @IBOutlet weak var lb_age: UILabel!
+    @IBOutlet weak var img_dogImage: UIImageView!
     var petsData: [[String:Any]] = [[:]]
     var i = 0
+    
+    var currentUsernameString: String!
+
+    private let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.set("", forKey: "urlDogImage")
         loadPet()
         
+        let ref = Database.database().reference(withPath: "users")
+        ref.queryOrdered(byChild: "uid").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: {snapshot in
+            
+            for child in snapshot.children{
+                let snap = child as! DataSnapshot
+                UserDefaults.standard.set(snap.key, forKey: "currentUsername")
+                
+            }
+            
+        })
+        currentUsernameString = UserDefaults.standard.value(forKey: "currentUsername") as? String
+        
+        img_dogImage.contentMode = .scaleAspectFill
+        img_dogImage.layer.borderWidth = 5
+        img_dogImage.layer.borderColor = UIColor(red: 0/255, green: 120/255, blue: 255/255, alpha: 1).cgColor
+        
+        disableButtons()
         
     }
     
     @IBAction func bt_like(_ sender: UIButton) {
         
-        db.child("users/\(username.text!)/pets/\(dogId.text!)/status/\(Auth.auth().currentUser!.uid)").setValue("like")
+        let username = UserDefaults.standard.value(forKey: "browseUsername")
+        let dogId = UserDefaults.standard.value(forKey: "browseDogId")
+        
+        db.child("users/\(username!)/pets/\(dogId!)/status/\(Auth.auth().currentUser!.uid)").setValue("like")
+        db.child("users/\(currentUsernameString!)/likes/\(username!)").setValue("like")
+        
+        disableButtons()
+        loadPet()
         
     }
     
+    @IBAction func bt_dislike(_ sender: Any) {
+        
+        let username = UserDefaults.standard.value(forKey: "browseUsername")
+        let dogId = UserDefaults.standard.value(forKey: "brosweDogId")
+        db.child("users/\(username!)/pets/\(dogId!)/status/\(Auth.auth().currentUser!.uid)").setValue("dislike")
+
+        disableButtons()
+        loadPet()
+    }
     
     func loadPet(){
+        img_dogImage.image = UIImage(named: "gallery-2")
+        
         // get the reference for the users
         let ref = Database.database().reference(withPath: "users")
         // get the snapshot of these reference
@@ -50,30 +94,105 @@ class HomeViewController: UIViewController {
                     let snapPets = childPets as! DataSnapshot
                     // create a constant to cast snapPets as a dictionary
                     let petDic = snapPets.value as! [String: Any]
+                    // create a constant to cast status for the pet
                     let status = petDic["status"] as! [String: Any]
-                    
-                    if let contains = status[Auth.auth().currentUser!.uid]{
-                        // do nothing
-                    }else {
-                        if petDic["ownerUID"] as? String == Auth.auth().currentUser?.uid{
-                            
-                        }else{
+                    // check to see if the pet has been given a status by the user before
+                    if status[Auth.auth().currentUser!.uid] == nil{
+                        
+                        if petDic["ownerUID"] as? String != Auth.auth().currentUser?.uid{
                             self.name.text = petDic["name"] as? String
-                            self.username.text = petDic["owner"] as? String
-                            self.dogId.text = snapPets.key
+                            
+                            UserDefaults.standard.set(petDic["owner"], forKey: "browseUsername")
+                            UserDefaults.standard.set(snapPets.key, forKey: "browseDogId")
+                            self.enableButtons()
+                            
+                            let age = petDic["birthdate"] as? String
+                            
+                            
+                            self.lb_age.text = "\(self.getYears(birthdate: age)) years old"
+                            
+                            // load image
+                            let userDic = snapUsers.value as! [String:Any]
+                            let email = userDic["email"] as! String
+                            
+                            self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
+                                
+                                guard let url = url, error == nil else{
+                                    UserDefaults.standard.set("urlString", forKey: "urlDogImage")
+                                    return
+                                }
+                                
+                                let urlString = url.absoluteString
+                                
+                                // set it as user default so load image can use this value
+                                UserDefaults.standard.set(urlString, forKey: "urlDogImage")
+                                
+                                self.loadImage()
+                                
+                            })
                             return
                         }
                     }
-                    
-                    // copy the dictionary to the array of dictionaries we created to store all pets data
-                    self.petsData.append(petDic)
-                    // print test
-                    print(self.petsData[self.i])
-                    // increment iterator
-                    self.i += 1
                 }
             }
         })
+    }
+    
+    func getYears(birthdate: String!) -> Int{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        let date = dateFormatter.date(from:birthdate)
+        
+        let now = Date()
+        let birthday = date
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: birthday!, to: now)
+        let age = ageComponents.year!
+        
+        return age
+    }
+    
+    func loadImage(){
+        
+        guard let urlString = UserDefaults.standard.value(forKey: "urlDogImage") as? String,
+              let url = URL(string: urlString) else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            DispatchQueue.main.sync {
+                
+                let image = UIImage(data: data)
+                self.img_dogImage.image = image
+            }
+            
+        })
+        
+        task.resume()
+    }
+    
+    func disableButtons(){
+        bt_dislike.alpha = 0.25
+        bt_dislike.isUserInteractionEnabled = false
+        bt_like.alpha = 0.25
+        bt_like.isUserInteractionEnabled = false
+        bt_viewProfile.alpha = 0.25
+        bt_viewProfile.isUserInteractionEnabled = false
+        lb_age.text = ""
+        name.text = ""
+    }
+    
+    func enableButtons(){
+        bt_dislike.alpha = 1
+        bt_dislike.isUserInteractionEnabled = true
+        bt_like.alpha = 1
+        bt_like.isUserInteractionEnabled = true
+        bt_viewProfile.alpha = 1
+        bt_viewProfile.isUserInteractionEnabled = true
     }
     
 }

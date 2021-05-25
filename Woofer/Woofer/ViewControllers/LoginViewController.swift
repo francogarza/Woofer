@@ -8,12 +8,6 @@
 import UIKit
 import Firebase
 
-struct currentUser{
-    
-    static var uid = String()
-    
-}
-
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tf_email: UITextField!
@@ -25,6 +19,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         tf_email.delegate = self
         tf_password.delegate = self
+        
+        tf_email.text = "an@g.com"
+        tf_password.text = "asdfas1!"
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -53,7 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }else {
-                currentUser.uid = result!.user.uid
                 self.transitionToHome()
             }
         }

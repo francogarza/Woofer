@@ -7,11 +7,14 @@
 
 import UIKit
 import DLRadioButton
+import FirebaseStorage
 
-class RegisterStepThreeVC: UIViewController {
+class RegisterStepThreeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     var username = String()
     var dogName = String()
+    
+    private let storage = Storage.storage().reference()
     
     @IBOutlet weak var radBt_allergies: DLRadioButton!
     @IBOutlet weak var radBt_vaccinated: DLRadioButton!
@@ -33,6 +36,43 @@ class RegisterStepThreeVC: UIViewController {
         return nil
     }
     
+    @IBAction func bt_uploadImage(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
+            return
+        }
+        guard let imageData = image.pngData() else{
+            return
+        }
+        
+        
+        storage.child("images/\(newUser.email)dog.png").putData(imageData, metadata: nil, completion: { _, error in
+            guard error == nil else{
+                print("failse to upload")
+                return
+            }
+            
+            
+        })
+        
+        // up;oad image
+        //get downlaod url
+        // save download url
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        picker.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func bt_registerStepThree(_ sender: Any) {
         let error = validateFields()
@@ -49,6 +89,8 @@ class RegisterStepThreeVC: UIViewController {
             self.present(registerStepFourVC, animated: true, completion: nil)
         }
     }
+    
+    
     
     func showError(_ message: String){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
