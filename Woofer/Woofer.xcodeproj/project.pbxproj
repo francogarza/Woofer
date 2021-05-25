@@ -23,6 +23,7 @@
 		2EF31DAB2640910500C0EDD7 /* Woofer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA92640910500C0EDD7 /* Woofer.xcdatamodeld */; };
 		2EF31DAD2640910800C0EDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF31DAC2640910800C0EDD7 /* Assets.xcassets */; };
 		2EF31DB02640910800C0EDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF31DAE2640910800C0EDD7 /* LaunchScreen.storyboard */; };
+		8B35C873265CD9CA0023BC66 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35C872265CD9CA0023BC66 /* Profile.swift */; };
 		8B5CAAE72647215900C69DD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B5CAAE62647215900C69DD2 /* GoogleService-Info.plist */; };
 		A3FC040E49E4F6FB833B2620 /* Pods_Woofer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B108FF975744CDBD9C5C1F /* Pods_Woofer.framework */; };
 		C4F49E8526559C4800816A67 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F49E8426559C4800816A67 /* TableViewController.swift */; };
@@ -50,6 +51,7 @@
 		2EF31DAF2640910800C0EDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EF31DB12640910800C0EDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75B108FF975744CDBD9C5C1F /* Pods_Woofer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Woofer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B35C872265CD9CA0023BC66 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8B5CAAE62647215900C69DD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4F49E8426559C4800816A67 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C4F49E8726559E2900816A67 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				2E7ACD50265ACA3A00BE82BE /* Sign Up */,
 				2E89E019265446F200975CA8 /* LoginViewController.swift */,
+				8B35C872265CD9CA0023BC66 /* Profile.swift */,
 				2E89E01B26544EE500975CA8 /* HomeViewController.swift */,
 				2E491106265C544900008F68 /* MatchesViewController.swift */,
 				2EF31DA42640910500C0EDD7 /* ViewController.swift */,
@@ -205,6 +208,7 @@
 				TargetAttributes = {
 					2EF31D9C2640910500C0EDD7 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -331,6 +335,7 @@
 				2E6D4DB126533463001EA7DE /* Constants.swift in Sources */,
 				2EF31DA12640910500C0EDD7 /* AppDelegate.swift in Sources */,
 				2E6D4DB526534443001EA7DE /* RegisterStepThreeVC.swift in Sources */,
+				8B35C873265CD9CA0023BC66 /* Profile.swift in Sources */,
 				2E6D4DB326533A46001EA7DE /* RegisterStepTwoVC.swift in Sources */,
 				2EF31DA32640910500C0EDD7 /* SceneDelegate.swift in Sources */,
 				2E89E01A265446F200975CA8 /* LoginViewController.swift in Sources */,
@@ -484,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP4W9MBS92;
 				INFOPLIST_FILE = Woofer/Other/Info.plist;
@@ -493,6 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SkyLineDev.Woofer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -504,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP4W9MBS92;
 				INFOPLIST_FILE = Woofer/Other/Info.plist;
