@@ -22,6 +22,9 @@ class HomeViewController: UIViewController {
     var petsData: [[String:Any]] = [[:]]
     var i = 0
     
+    
+    var currentUsernameString: String!
+    
     @IBOutlet weak var currentUsername: UILabel!
     private let storage = Storage.storage().reference()
     
@@ -36,19 +39,20 @@ class HomeViewController: UIViewController {
             
             for child in snapshot.children{
                 let snap = child as! DataSnapshot
-                self.currentUsername.text = snap.key
+                UserDefaults.standard.set(snap.key, forKey: "currentUsername")
                 
             }
             
         })
-        
+        currentUsername.text = UserDefaults.standard.value(forKey: "currentUsername") as? String
+        currentUsernameString = UserDefaults.standard.value(forKey: "currentUsername") as? String
         
     }
     
     @IBAction func bt_like(_ sender: UIButton) {
         
         db.child("users/\(username.text!)/pets/\(dogId.text!)/status/\(Auth.auth().currentUser!.uid)").setValue("like")
-        db.child("users/\(currentUsername.text!)/likes/\(username.text!)").setValue("like")
+        db.child("users/\(currentUsernameString!)/likes/\(username.text!)").setValue("like")
         
         disableButtons()
         loadPet()
