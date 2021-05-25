@@ -59,8 +59,6 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print("\(matches[indexPath.row].name!) + \(matches[indexPath.row].owner!) + \(matches.count)")
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchDogInfoCell") as! MatchDogInfoCell
         
         cell.lb_dogName.text = matches[indexPath.row].name!
@@ -90,8 +88,6 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         ref.observeSingleEvent(of: .value, with: { snapshot in
             // check to see if snapshot exists
             if !snapshot.exists() { return }
-            
-//            print(snapshot)
             // all users' dictionary
             let usersDictionary = snapshot.value as! [String:Any]
             // current user's dictionary
@@ -100,7 +96,6 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             let currentUserLikesDictionary = currentUserDictionary["likes"] as! [String:Any]
 
             for key in currentUserLikesDictionary.keys{
-                print(key)
                 // dictionary for the like's info
                 if let likeDictionary = usersDictionary["\(key)"] as? [String:Any]{
                     
