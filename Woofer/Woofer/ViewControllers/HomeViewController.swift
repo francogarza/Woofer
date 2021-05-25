@@ -47,6 +47,10 @@ class HomeViewController: UIViewController {
         currentUsername.text = UserDefaults.standard.value(forKey: "currentUsername") as? String
         currentUsernameString = UserDefaults.standard.value(forKey: "currentUsername") as? String
         
+        img_dogImage.contentMode = .scaleAspectFill
+        img_dogImage.layer.borderWidth = 5
+        img_dogImage.layer.borderColor = UIColor(red: 0/255, green: 120/255, blue: 255/255, alpha: 1).cgColor
+        
     }
     
     @IBAction func bt_like(_ sender: UIButton) {
@@ -103,7 +107,9 @@ class HomeViewController: UIViewController {
                             self.enableButtons()
                             
                             let age = petDic["birthdate"] as? String
-                            self.lb_age.text = age
+                            
+                            
+                            self.lb_age.text = "\(self.getYears(birthdate: age)) years old"
                             
                             // load image
                             let userDic = snapUsers.value as! [String:Any]
@@ -130,6 +136,21 @@ class HomeViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func getYears(birthdate: String!) -> Int{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        let date = dateFormatter.date(from:birthdate)
+        
+        let now = Date()
+        let birthday = date
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: birthday!, to: now)
+        let age = ageComponents.year!
+        
+        return age
     }
     
     func loadImage(){

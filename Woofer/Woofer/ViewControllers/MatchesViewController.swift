@@ -71,9 +71,12 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.lb_dogAge.text = "Age: \(age) years old"
         
-        cell.img_dogImage.contentMode = .scaleAspectFit
         getImageUrl(email: matches[indexPath.row].email, cell: cell)
         cell.img_dogImage.contentMode = .scaleAspectFill
+        
+        cell.selectionStyle = .none
+        
+        cell.lb_owner.text = "Owner: \(matches[indexPath.row].owner!)"
         
         return cell
     }
@@ -88,7 +91,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             // check to see if snapshot exists
             if !snapshot.exists() { return }
             
-            print(snapshot)
+//            print(snapshot)
             // all users' dictionary
             let usersDictionary = snapshot.value as! [String:Any]
             // current user's dictionary
@@ -106,66 +109,11 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.loadDogInfo(userDictionary: likeDictionary)
                 }
                 
-                
-                
                 self.tableView.reloadData()
 
             }
         })
-            
-//            // loop through all the likes
-//            for like in snapshot.children{
-//                // create a snap from the child to get the username as the key
-//                let snap = like as! DataSnapshot
-//                // create a new reference to get the info for the like
-//                let ref2 = Database.database().reference(withPath: "users/\(snap.key)")
-//                // observe the event of the the like's info
-//                ref2.observeSingleEvent(of: .value, with: { snapshot2 in
-//                    // create a dictionary of the like
-//                    let userDictionary = snapshot2.value as! [String:Any]
-//                    // create a dictionary with the childs's likes
-//                    let userLikes = userDictionary["likes"] as! [String:Any]
-//                    // check to see if the current user's username is contained in the dictionary of the child's likes
-//                    if userLikes["\(self.currentUsernameString)"] != nil{
-//                        // this means its a match
-//                        // load dog info
-//                        self.loadDogInfo(userDictionary: userDictionary)
-//                    }
-//                    // reload tableView inside here because data is deleted once observeSingleEvent is over
-//                    self.tableView.reloadData()
-//                })
-//            }
-//        })
         
-//        // reference the currentUsername likes
-//        let ref = Database.database().reference(withPath: "users/\(currentUsernameString)/likes")
-//        // observe the event with its value
-//        ref.observeSingleEvent(of: .value, with: { snapshot in
-//            // check to see if snapshot exists
-//            if !snapshot.exists() { return }
-//            // loop through all the likes
-//            for like in snapshot.children{
-//                // create a snap from the child to get the username as the key
-//                let snap = like as! DataSnapshot
-//                // create a new reference to get the info for the like
-//                let ref2 = Database.database().reference(withPath: "users/\(snap.key)")
-//                // observe the event of the the like's info
-//                ref2.observeSingleEvent(of: .value, with: { snapshot2 in
-//                    // create a dictionary of the like
-//                    let userDictionary = snapshot2.value as! [String:Any]
-//                    // create a dictionary with the childs's likes
-//                    let userLikes = userDictionary["likes"] as! [String:Any]
-//                    // check to see if the current user's username is contained in the dictionary of the child's likes
-//                    if userLikes["\(self.currentUsernameString)"] != nil{
-//                        // this means its a match
-//                        // load dog info
-//                        self.loadDogInfo(userDictionary: userDictionary)
-//                    }
-//                    // reload tableView inside here because data is deleted once observeSingleEvent is over
-//                    self.tableView.reloadData()
-//                })
-//            }
-//        })
     }
     
     func getYears(birthdate: String!) -> Int{
