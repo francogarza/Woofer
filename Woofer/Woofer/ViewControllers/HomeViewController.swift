@@ -12,8 +12,6 @@ import FirebaseStorage
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var dogId: UILabel!
     @IBOutlet weak var bt_dislike: UIButton!
     @IBOutlet weak var bt_like: UIButton!
     @IBOutlet weak var bt_viewProfile: UIButton!
@@ -22,10 +20,8 @@ class HomeViewController: UIViewController {
     var petsData: [[String:Any]] = [[:]]
     var i = 0
     
-    
     var currentUsernameString: String!
-    
-    @IBOutlet weak var currentUsername: UILabel!
+
     private let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
@@ -44,19 +40,23 @@ class HomeViewController: UIViewController {
             }
             
         })
-        currentUsername.text = UserDefaults.standard.value(forKey: "currentUsername") as? String
         currentUsernameString = UserDefaults.standard.value(forKey: "currentUsername") as? String
         
         img_dogImage.contentMode = .scaleAspectFill
         img_dogImage.layer.borderWidth = 5
         img_dogImage.layer.borderColor = UIColor(red: 0/255, green: 120/255, blue: 255/255, alpha: 1).cgColor
         
+        disableButtons()
+        
     }
     
     @IBAction func bt_like(_ sender: UIButton) {
         
-        db.child("users/\(username.text!)/pets/\(dogId.text!)/status/\(Auth.auth().currentUser!.uid)").setValue("like")
-        db.child("users/\(currentUsernameString!)/likes/\(username.text!)").setValue("like")
+        let username = UserDefaults.standard.value(forKey: "browseUsername")
+        let dogId = UserDefaults.standard.value(forKey: "browseDogId")
+        
+        db.child("users/\(username!)/pets/\(dogId!)/status/\(Auth.auth().currentUser!.uid)").setValue("like")
+        db.child("users/\(currentUsernameString!)/likes/\(username!)").setValue("like")
         
         disableButtons()
         loadPet()
@@ -64,18 +64,17 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func bt_dislike(_ sender: Any) {
-            
-        db.child("users/\(username.text!)/pets/\(dogId.text!)/status/\(Auth.auth().currentUser!.uid)").setValue("dislike")
+        
+        let username = UserDefaults.standard.value(forKey: "browseUsername")
+        let dogId = UserDefaults.standard.value(forKey: "brosweDogId")
+        db.child("users/\(username!)/pets/\(dogId!)/status/\(Auth.auth().currentUser!.uid)").setValue("dislike")
 
         disableButtons()
         loadPet()
     }
     
     func loadPet(){
-        name.text = "name"
-        username.text = "username"
-        dogId.text = "dogId"
-        img_dogImage.image = nil
+        img_dogImage.image = UIImage(named: "gallery-2")
         
         // get the reference for the users
         let ref = Database.database().reference(withPath: "users")
@@ -102,8 +101,9 @@ class HomeViewController: UIViewController {
                         
                         if petDic["ownerUID"] as? String != Auth.auth().currentUser?.uid{
                             self.name.text = petDic["name"] as? String
-                            self.username.text = petDic["owner"] as? String
-                            self.dogId.text = snapPets.key
+                            
+                            UserDefaults.standard.set(petDic["owner"], forKey: "browseUsername")
+                            UserDefaults.standard.set(snapPets.key, forKey: "browseDogId")
                             self.enableButtons()
                             
                             let age = petDic["birthdate"] as? String
@@ -182,6 +182,8 @@ class HomeViewController: UIViewController {
         bt_like.isUserInteractionEnabled = false
         bt_viewProfile.alpha = 0.25
         bt_viewProfile.isUserInteractionEnabled = false
+        lb_age.text = ""
+        name.text = ""
     }
     
     func enableButtons(){
