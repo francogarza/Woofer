@@ -171,7 +171,6 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
         })
-        
         task.resume()
     }
     

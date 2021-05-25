@@ -1,0 +1,16 @@
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/CodableErrors.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/CodablePassThroughTypes.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/CollectionReference+WriteEncodable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentID.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentReference+Codable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentReference+WriteEncodable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentSnapshot+ReadDecodable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/ExplicitNull.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/FieldValue+Encodable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/third_party/FirestoreEncoder/FirestoreDecoder.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/third_party/FirestoreEncoder/FirestoreEncoder.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/GeoPoint+Codable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/ServerTimestamp.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/Timestamp+Codable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/Transaction+WriteEncodable.swift
+/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/WriteBatch+WriteEncodable.swift

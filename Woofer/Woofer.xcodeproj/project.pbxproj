@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E491107265C544900008F68 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E491106265C544900008F68 /* MatchesViewController.swift */; };
+		2E4DC07D265D91A400F08280 /* MatchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */; };
 		2E6D4DAD26532B69001EA7DE /* RegisterStepOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */; };
 		2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DAE2653303B001EA7DE /* Utilities.swift */; };
 		2E6D4DB126533463001EA7DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DB026533463001EA7DE /* Constants.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		253D738A7747F930D5C2094A /* Pods-Woofer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woofer.release.xcconfig"; path = "Target Support Files/Pods-Woofer/Pods-Woofer.release.xcconfig"; sourceTree = "<group>"; };
 		2E491106265C544900008F68 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchProfileViewController.swift; sourceTree = "<group>"; };
 		2E6D4DAC26532B69001EA7DE /* RegisterStepOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepOneVC.swift; sourceTree = "<group>"; };
 		2E6D4DAE2653303B001EA7DE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2E6D4DB026533463001EA7DE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				2E89E01B26544EE500975CA8 /* HomeViewController.swift */,
 				2E491106265C544900008F68 /* MatchesViewController.swift */,
 				2EF31DA42640910500C0EDD7 /* ViewController.swift */,
+				2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4DC07D265D91A400F08280 /* MatchProfileViewController.swift in Sources */,
 				2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */,
 				2E6D4DB726534644001EA7DE /* RegisterStepFourVC.swift in Sources */,
 				C4F49E8526559C4800816A67 /* TableViewController.swift in Sources */,

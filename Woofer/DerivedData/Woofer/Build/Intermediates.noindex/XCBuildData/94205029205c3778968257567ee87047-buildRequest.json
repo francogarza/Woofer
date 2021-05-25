@@ -1,0 +1,57 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "3cc1a2a7ee5f2902ab2c9b8386df0057123bec4b20608d81a474157730dd8a2a"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64e",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : true,
+      "platform" : "iphoneos",
+      "sdk" : "iphoneos14.5",
+      "sdkVariant" : "iphoneos",
+      "supportedArchitectures" : [
+        "armv4t",
+        "armv5",
+        "armv6",
+        "armv7",
+        "armv7f",
+        "armv7s",
+        "armv7k",
+        "arm64",
+        "arm64e"
+      ],
+      "targetArchitecture" : "arm64e"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/francogarza/Desktop/apis/Woofer/Woofer/DerivedData/Woofer/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/francogarza/Desktop/apis/Woofer/Woofer/DerivedData/Woofer/Build/Products",
+      "derivedDataPath" : "/Users/francogarza/Desktop/apis/Woofer/Woofer/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/francogarza/Desktop/apis/Woofer/Woofer/DerivedData/Woofer/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/francogarza/Desktop/apis/Woofer/Woofer/DerivedData/Woofer/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/francogarza/Desktop/apis/Woofer/Woofer/DerivedData/Woofer/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

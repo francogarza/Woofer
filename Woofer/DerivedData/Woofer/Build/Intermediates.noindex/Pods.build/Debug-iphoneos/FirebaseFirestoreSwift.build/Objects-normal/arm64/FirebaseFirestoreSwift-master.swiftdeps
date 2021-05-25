@@ -1,0 +1,20 @@
+version: "Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
+options: "5ee81f7016bdf67747a1ae87d3fe157e"
+build_time: [1621919563, 811300000]
+inputs:
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/CodableErrors.swift": [1620842763, 725503059]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/CodablePassThroughTypes.swift": [1620842763, 725835005]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/CollectionReference+WriteEncodable.swift": [1620842763, 726177560]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentID.swift": [1620842763, 726472094]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentReference+Codable.swift": [1620842763, 726774230]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentReference+WriteEncodable.swift": [1620842763, 727015997]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/DocumentSnapshot+ReadDecodable.swift": [1620842763, 727283345]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/ExplicitNull.swift": [1620842763, 727592315]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/FieldValue+Encodable.swift": [1620842763, 727890240]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/third_party/FirestoreEncoder/FirestoreDecoder.swift": [1620842763, 730084741]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/third_party/FirestoreEncoder/FirestoreEncoder.swift": [1620842763, 730743611]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/GeoPoint+Codable.swift": [1620842763, 728155251]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/ServerTimestamp.swift": [1620842763, 728389632]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/Timestamp+Codable.swift": [1620842763, 728686860]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/Transaction+WriteEncodable.swift": [1620842763, 729018945]
+  "/Users/francogarza/Desktop/apis/Woofer/Woofer/Pods/FirebaseFirestoreSwift/Firestore/Swift/Source/Codable/WriteBatch+WriteEncodable.swift": [1620842763, 729302732]
