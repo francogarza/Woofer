@@ -103,6 +103,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print(key)
                 // dictionary for the like's info
                 if let likeDictionary = usersDictionary["\(key)"] as? [String:Any]{
+                    
                     let likeLikesDictionary = likeDictionary["likes"] as! [String:Any]
 
                     if likeLikesDictionary["\(self.currentUsernameString)"] != nil{
