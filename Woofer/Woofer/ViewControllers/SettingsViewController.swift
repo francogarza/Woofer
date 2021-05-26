@@ -65,6 +65,12 @@ class SettingsViewController: UIViewController {
         }else{
             userdefaults.set("false",forKey: "filterParental")
         }
+        
+        let homeVC = presentingViewController as! HomeViewController
+        homeVC.disableButtons()
+        homeVC.loadPet()
+        
+        
     }
 
 }

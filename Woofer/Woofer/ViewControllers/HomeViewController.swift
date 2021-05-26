@@ -119,27 +119,35 @@ class HomeViewController: UIViewController {
                     let status = petDic["status"] as! [String: Any]
                     // check to see if the pet has been given a status by the user before
                     if status[Auth.auth().currentUser!.uid] == nil{
-                        if petDic["ownerUID"] as? String != Auth.auth().currentUser?.uid{
-                            self.name.text = petDic["name"] as? String
-                            UserDefaults.standard.set(petDic["owner"], forKey: "browseUsername")
-                            UserDefaults.standard.set(snapPets.key, forKey: "browseDogId")
-                            self.enableButtons()
-                            let age = petDic["birthdate"] as? String
-                            self.lb_age.text = "\(self.getYears(birthdate: age)) years old"
-                            // load image
-                            let userDic = snapUsers.value as! [String:Any]
-                            let email = userDic["email"] as! String
-                            self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
-                                guard let url = url, error == nil else{
-                                    UserDefaults.standard.set("urlString", forKey: "urlDogImageBrowse")
-                                    return
-                                }
-                                let urlString = url.absoluteString
-                                // set it as user default so load image can use this value
-                                UserDefaults.standard.set(urlString, forKey: "urlDogImageBrowse")
-                                self.loadImage()
-                            })
-                            return
+                        
+                        if UserDefaults.standard.value(forKey: "filterGender") as! String
+                            == petDic["gender"] as! String && UserDefaults.standard.value(forKey: "filterVaccinated") as! String == petDic["vaccinated"] as! String && UserDefaults.standard.value(forKey: "filterPedigree") as! String == petDic["pedigree"] as! String && UserDefaults.standard.value(forKey: "filterParental") as! String == petDic["experience"] as! String{
+                        
+                        
+                            if petDic["ownerUID"] as? String != Auth.auth().currentUser?.uid{
+                                self.name.text = petDic["name"] as? String
+                                UserDefaults.standard.set(petDic["owner"], forKey: "browseUsername")
+                                UserDefaults.standard.set(snapPets.key, forKey: "browseDogId")
+                                self.enableButtons()
+                                let age = petDic["birthdate"] as? String
+                                self.lb_age.text = "\(self.getYears(birthdate: age)) years old"
+                                // load image
+                                let userDic = snapUsers.value as! [String:Any]
+                                let email = userDic["email"] as! String
+                                self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
+                                    guard let url = url, error == nil else{
+                                        UserDefaults.standard.set("urlString", forKey: "urlDogImageBrowse")
+                                        return
+                                    }
+                                    let urlString = url.absoluteString
+                                    // set it as user default so load image can use this value
+                                    UserDefaults.standard.set(urlString, forKey: "urlDogImageBrowse")
+                                    self.loadImage()
+                                })
+                                return
+                            }
+                            
+                            
                         }
                     }
                     
