@@ -17,7 +17,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bt_viewProfile: UIButton!
     @IBOutlet weak var lb_age: UILabel!
     @IBOutlet weak var img_dogImage: UIImageView!
-    var petsData: [[String:Any]] = [[:]]
     var i = 0
     
     var currentUsernameString: String!
@@ -26,6 +25,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setDefaultFilters()
         
         UserDefaults.standard.set("", forKey: "urlDogImageBrowse")
         loadPet()
@@ -49,6 +50,7 @@ class HomeViewController: UIViewController {
         disableButtons()
         
     }
+    
     
     @IBAction func bt_like(_ sender: UIButton) {
         
@@ -98,37 +100,25 @@ class HomeViewController: UIViewController {
                     let status = petDic["status"] as! [String: Any]
                     // check to see if the pet has been given a status by the user before
                     if status[Auth.auth().currentUser!.uid] == nil{
-                        
                         if petDic["ownerUID"] as? String != Auth.auth().currentUser?.uid{
                             self.name.text = petDic["name"] as? String
-                            
                             UserDefaults.standard.set(petDic["owner"], forKey: "browseUsername")
                             UserDefaults.standard.set(snapPets.key, forKey: "browseDogId")
                             self.enableButtons()
-                            
                             let age = petDic["birthdate"] as? String
-                            
-                            
                             self.lb_age.text = "\(self.getYears(birthdate: age)) years old"
-                            
                             // load image
                             let userDic = snapUsers.value as! [String:Any]
                             let email = userDic["email"] as! String
-                            
                             self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
-                                
                                 guard let url = url, error == nil else{
                                     UserDefaults.standard.set("urlString", forKey: "urlDogImageBrowse")
                                     return
                                 }
-                                
                                 let urlString = url.absoluteString
-                                
                                 // set it as user default so load image can use this value
                                 UserDefaults.standard.set(urlString, forKey: "urlDogImageBrowse")
-                                
                                 self.loadImage()
-                                
                             })
                             return
                         }
@@ -143,7 +133,6 @@ class HomeViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "MMMM d, yyyy"
         let date = dateFormatter.date(from:birthdate)
-        
         let now = Date()
         let birthday = date
         let calendar = Calendar.current
@@ -154,25 +143,31 @@ class HomeViewController: UIViewController {
     }
     
     func loadImage(){
-        
         guard let urlString = UserDefaults.standard.value(forKey: "urlDogImageBrowse") as? String,
               let url = URL(string: urlString) else{
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
             guard let data = data, error == nil else{
                 return
             }
             DispatchQueue.main.sync {
-                
                 let image = UIImage(data: data)
                 self.img_dogImage.image = image
             }
             
         })
-        
         task.resume()
+    }
+    
+    func setDefaultFilters(){
+        let userdefaults = UserDefaults.standard
+        if(userdefaults.value(forKey: "filterGender") == nil){
+            userdefaults.set("male",forKey: "filterGender")
+            userdefaults.set("true",forKey: "filterVaccinated")
+            userdefaults.set("true",forKey: "filterPedigree")
+            userdefaults.set("true",forKey: "filterParental")
+        }
     }
     
     func disableButtons(){

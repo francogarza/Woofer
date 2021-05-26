@@ -17,9 +17,10 @@
 		2E6D4DB726534644001EA7DE /* RegisterStepFourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D4DB626534644001EA7DE /* RegisterStepFourVC.swift */; };
 		2E89E01A265446F200975CA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89E019265446F200975CA8 /* LoginViewController.swift */; };
 		2E89E01C26544EE500975CA8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89E01B26544EE500975CA8 /* HomeViewController.swift */; };
+		2EBBA3AA265DBEF300D9FBBE /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBA3A9265DBEF300D9FBBE /* MyProfileViewController.swift */; };
+		2EBBA3AC265DC3E300D9FBBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBA3AB265DC3E300D9FBBE /* SettingsViewController.swift */; };
 		2EF31DA12640910500C0EDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA02640910500C0EDD7 /* AppDelegate.swift */; };
 		2EF31DA32640910500C0EDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA22640910500C0EDD7 /* SceneDelegate.swift */; };
-		2EF31DA52640910500C0EDD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA42640910500C0EDD7 /* ViewController.swift */; };
 		2EF31DA82640910500C0EDD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF31DA62640910500C0EDD7 /* Main.storyboard */; };
 		2EF31DAB2640910500C0EDD7 /* Woofer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31DA92640910500C0EDD7 /* Woofer.xcdatamodeld */; };
 		2EF31DAD2640910800C0EDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF31DAC2640910800C0EDD7 /* Assets.xcassets */; };
@@ -42,10 +43,11 @@
 		2E6D4DB626534644001EA7DE /* RegisterStepFourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepFourVC.swift; sourceTree = "<group>"; };
 		2E89E019265446F200975CA8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E89E01B26544EE500975CA8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2EBBA3A9265DBEF300D9FBBE /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		2EBBA3AB265DC3E300D9FBBE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2EF31D9D2640910500C0EDD7 /* Woofer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woofer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF31DA02640910500C0EDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EF31DA22640910500C0EDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2EF31DA42640910500C0EDD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2EF31DA72640910500C0EDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2EF31DAA2640910500C0EDD7 /* Woofer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Woofer.xcdatamodel; sourceTree = "<group>"; };
 		2EF31DAC2640910800C0EDD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,11 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				2E7ACD50265ACA3A00BE82BE /* Sign Up */,
+				2EBBA3A9265DBEF300D9FBBE /* MyProfileViewController.swift */,
 				2E89E019265446F200975CA8 /* LoginViewController.swift */,
 				2E89E01B26544EE500975CA8 /* HomeViewController.swift */,
 				2E491106265C544900008F68 /* MatchesViewController.swift */,
-				2EF31DA42640910500C0EDD7 /* ViewController.swift */,
 				2E4DC07C265D91A400F08280 /* MatchProfileViewController.swift */,
+				2EBBA3AB265DC3E300D9FBBE /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -311,7 +314,6 @@
 				2E6D4DAF2653303B001EA7DE /* Utilities.swift in Sources */,
 				2E6D4DB726534644001EA7DE /* RegisterStepFourVC.swift in Sources */,
 				C4F49E8526559C4800816A67 /* TableViewController.swift in Sources */,
-				2EF31DA52640910500C0EDD7 /* ViewController.swift in Sources */,
 				2EF31DAB2640910500C0EDD7 /* Woofer.xcdatamodeld in Sources */,
 				2E6D4DAD26532B69001EA7DE /* RegisterStepOneVC.swift in Sources */,
 				2E6D4DB126533463001EA7DE /* Constants.swift in Sources */,
@@ -320,8 +322,10 @@
 				2E6D4DB326533A46001EA7DE /* RegisterStepTwoVC.swift in Sources */,
 				2EF31DA32640910500C0EDD7 /* SceneDelegate.swift in Sources */,
 				2E89E01A265446F200975CA8 /* LoginViewController.swift in Sources */,
+				2EBBA3AC265DC3E300D9FBBE /* SettingsViewController.swift in Sources */,
 				2E491107265C544900008F68 /* MatchesViewController.swift in Sources */,
 				C4F49E8826559E2900816A67 /* CustomCell.swift in Sources */,
+				2EBBA3AA265DBEF300D9FBBE /* MyProfileViewController.swift in Sources */,
 				2E89E01C26544EE500975CA8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
