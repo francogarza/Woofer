@@ -197,7 +197,7 @@ class HomeViewController: UIViewController {
         bt_like.isUserInteractionEnabled = false
         bt_viewProfile.alpha = 0.25
         bt_viewProfile.isUserInteractionEnabled = false
-        lb_age.text = "no more pets in available"
+        lb_age.text = "no more pets available"
         lb_age.textAlignment = .center
         name.text = ""
         
