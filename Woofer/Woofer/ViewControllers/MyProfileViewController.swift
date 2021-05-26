@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class MyProfileViewController: UIViewController {
 
@@ -25,6 +26,8 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var img_vaccinated: UIImageView!
     
     let currentUsernameString = UserDefaults.standard.value(forKey: "currentUsername") as! String
+    
+    private let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +68,17 @@ class MyProfileViewController: UIViewController {
             }else{
                 self.img_vaccinated.image = UIImage(named: "close")
             }
-            self.loadImage()
+            let email = matchOwnerDic["email"] as! String
+            self.storage.child("images/\(email)dog.png").downloadURL(completion: {url, error in
+                guard let url = url, error == nil else{
+                    UserDefaults.standard.set("urlString", forKey: "urlDogImage")
+                    return
+                }
+                let urlString = url.absoluteString
+                // set it as user default so load image can use this value
+                UserDefaults.standard.set(urlString, forKey: "urlDogImage")
+                self.loadImage()
+            })
             // extract owner data
             self.lb_ownerName.text = "Name: \(matchOwnerDic["name"]!) \(matchOwnerDic["lastName"]!)"
             self.lb_ownerAge.text = "Age: \(self.getYears(birthdate: matchOwnerDic["birthdate"] as? String)) years"
