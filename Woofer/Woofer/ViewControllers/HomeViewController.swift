@@ -87,7 +87,7 @@ class HomeViewController: UIViewController {
     @IBAction func bt_dislike(_ sender: Any) {
         
         let username = UserDefaults.standard.value(forKey: "browseUsername")
-        let dogId = UserDefaults.standard.value(forKey: "brosweDogId")
+        let dogId = UserDefaults.standard.value(forKey: "browseDogId")
         db.child("users/\(username!)/pets/\(dogId!)/status/\(Auth.auth().currentUser!.uid)").setValue("dislike")
 
         disableButtons()
