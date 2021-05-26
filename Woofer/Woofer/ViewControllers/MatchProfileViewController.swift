@@ -18,6 +18,11 @@ class MatchProfileViewController: UIViewController {
     @IBOutlet weak var lb_ownerAge: UILabel!
     @IBOutlet weak var lb_ownerOccupation: UILabel!
     
+    @IBOutlet weak var img_energetic: UIImageView!
+    @IBOutlet weak var img_parental: UIImageView!
+    @IBOutlet weak var img_vaccinated: UIImageView!
+    
+    
     
     let matchUsernameString = UserDefaults.standard.value(forKey: "browseUsername") as! String
     
@@ -44,11 +49,26 @@ class MatchProfileViewController: UIViewController {
             // extract dog data
             self.lb_name.text = dogDic["name"] as? String
             self.lb_breed.text = "Breed: \(dogDic["breed"] as! String)"
-            self.lb_age.text = "Age: \(self.getYears(birthdate: dogDic["birthdate"] as? String)) years old"
+            self.lb_age.text = "Age: \(self.getYears(birthdate: dogDic["birthdate"] as? String)) years"
             self.loadImage()
+            if dogDic["personality"] as! String == "true" {
+                self.img_energetic.image = UIImage(named: "check-2")
+            }else{
+                self.img_energetic.image = UIImage(named: "close")
+            }
+            if dogDic["experience"] as! String == "true" {
+                self.img_parental.image = UIImage(named: "check-2")
+            }else{
+                self.img_parental.image = UIImage(named: "close")
+            }
+            if dogDic["vaccinated"] as! String == "true" {
+                self.img_vaccinated.image = UIImage(named: "check-2")
+            }else{
+                self.img_vaccinated.image = UIImage(named: "close")
+            }
             // extract owner data
             self.lb_ownerName.text = "Name: \(matchOwnerDic["name"]!) \(matchOwnerDic["lastName"]!)"
-            self.lb_ownerAge.text = "Age: \(self.getYears(birthdate: matchOwnerDic["birthdate"] as? String)) years old"
+            self.lb_ownerAge.text = "Age: \(self.getYears(birthdate: matchOwnerDic["birthdate"] as? String)) years"
             self.lb_ownerOccupation.text = "Occupation: \(matchOwnerDic["occupation"]!)"
             
         })
@@ -91,6 +111,7 @@ class MatchProfileViewController: UIViewController {
                 
                 let image = UIImage(data: data)
                 self.img_dogImage.image = image
+                self.img_dogImage.contentMode = .scaleAspectFill
             }
             
         })

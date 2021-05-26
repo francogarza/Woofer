@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bt_viewProfile: UIButton!
     @IBOutlet weak var lb_age: UILabel!
     @IBOutlet weak var img_dogImage: UIImageView!
+    @IBOutlet weak var section: UIView!
     var i = 0
     
     var currentUsernameString: String!
@@ -45,7 +46,25 @@ class HomeViewController: UIViewController {
         
         img_dogImage.contentMode = .scaleAspectFill
         img_dogImage.layer.borderWidth = 5
-        img_dogImage.layer.borderColor = UIColor(red: 0/255, green: 120/255, blue: 255/255, alpha: 1).cgColor
+        img_dogImage.layer.borderColor = UIColor(named: "black")?.cgColor
+        
+        section.layer.borderWidth = 3
+        section.layer.borderColor = UIColor(named: "black")?.cgColor
+        
+        bt_viewProfile.layer.cornerRadius = 20
+        bt_viewProfile.clipsToBounds = true
+        bt_viewProfile.layer.borderColor = UIColor(named: "black")?.cgColor
+        bt_viewProfile.layer.borderWidth = 3
+        
+        bt_like.clipsToBounds = true
+        bt_like.layer.cornerRadius = 40
+        bt_like.layer.borderColor = UIColor(named: "black")?.cgColor
+        bt_like.layer.borderWidth = 3
+        
+        bt_dislike.clipsToBounds = true
+        bt_dislike.layer.cornerRadius = 40
+        bt_dislike.layer.borderColor = UIColor(named: "black")?.cgColor
+        bt_dislike.layer.borderWidth = 3
         
         disableButtons()
         
@@ -177,8 +196,10 @@ class HomeViewController: UIViewController {
         bt_like.isUserInteractionEnabled = false
         bt_viewProfile.alpha = 0.25
         bt_viewProfile.isUserInteractionEnabled = false
-        lb_age.text = ""
+        lb_age.text = "no more pets in available"
+        lb_age.textAlignment = .center
         name.text = ""
+        
     }
     
     func enableButtons(){
@@ -188,6 +209,7 @@ class HomeViewController: UIViewController {
         bt_like.isUserInteractionEnabled = true
         bt_viewProfile.alpha = 1
         bt_viewProfile.isUserInteractionEnabled = true
+        lb_age.textAlignment = .right
     }
     
 }

@@ -20,10 +20,15 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var lb_ownerOccupation: UILabel!
     @IBOutlet weak var lb_email: UILabel!
     
-    let matchUsernameString = UserDefaults.standard.value(forKey: "browseUsername") as! String
+    @IBOutlet weak var img_energetic: UIImageView!
+    @IBOutlet weak var img_parental: UIImageView!
+    @IBOutlet weak var img_vaccinated: UIImageView!
+    
+    let currentUsernameString = UserDefaults.standard.value(forKey: "currentUsername") as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        img_dogImage.contentMode = .scaleAspectFill
         loadInfo()
     }
     
@@ -37,7 +42,7 @@ class MyProfileViewController: UIViewController {
             // make a dicitonary out of the snapshot
             let usersDic = snapshot.value as! [String:Any]
             // make a dicitonary out of the match's values
-            let matchOwnerDic = usersDic[self.matchUsernameString] as! [String:Any]
+            let matchOwnerDic = usersDic[self.currentUsernameString] as! [String:Any]
             // make a dictionary out of the pet
             let pets = matchOwnerDic["pets"] as! [String:Any]
             let dogDic = pets[pets.startIndex].value as! [String:Any]
@@ -45,11 +50,27 @@ class MyProfileViewController: UIViewController {
             self.lb_dogName.text = dogDic["name"] as? String
             self.lb_dogBreed.text = "Breed: \(dogDic["breed"] as! String)"
             self.lb_dogAge.text = "Age: \(self.getYears(birthdate: dogDic["birthdate"] as? String)) years old"
+            if dogDic["personality"] as! String == "true" {
+                self.img_energetic.image = UIImage(named: "check-2")
+            }else{
+                self.img_energetic.image = UIImage(named: "close")
+            }
+            if dogDic["experience"] as! String == "true" {
+                self.img_parental.image = UIImage(named: "check-2")
+            }else{
+                self.img_parental.image = UIImage(named: "close")
+            }
+            if dogDic["vaccinated"] as! String == "true" {
+                self.img_vaccinated.image = UIImage(named: "check-2")
+            }else{
+                self.img_vaccinated.image = UIImage(named: "close")
+            }
             self.loadImage()
             // extract owner data
             self.lb_ownerName.text = "Name: \(matchOwnerDic["name"]!) \(matchOwnerDic["lastName"]!)"
-            self.lb_ownerAge.text = "Age: \(self.getYears(birthdate: matchOwnerDic["birthdate"] as? String)) years old"
+            self.lb_ownerAge.text = "Age: \(self.getYears(birthdate: matchOwnerDic["birthdate"] as? String)) years"
             self.lb_ownerOccupation.text = "Occupation: \(matchOwnerDic["occupation"]!)"
+            self.lb_email.text = "Email: \(matchOwnerDic["email"]!)"
             
         })
     }

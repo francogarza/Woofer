@@ -22,6 +22,7 @@ class MatchDogInfoCell: UITableViewCell{
     @IBOutlet weak var lb_dogName: UILabel!
     @IBOutlet weak var lb_dogAge: UILabel!
     @IBOutlet weak var lb_owner: UILabel!
+    @IBOutlet weak var lb_email: UILabel!
     @IBOutlet weak var img_dogImage: UIImageView!
     
 }
@@ -68,6 +69,8 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         let age = getYears(birthdate: birthdate)
         
         cell.lb_dogAge.text = "Age: \(age) years old"
+        
+        cell.lb_email.text = "Email: \(matches[indexPath.row].email!)"
         
         getImageUrl(email: matches[indexPath.row].email, cell: cell)
         cell.img_dogImage.contentMode = .scaleAspectFill
